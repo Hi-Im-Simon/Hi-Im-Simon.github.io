@@ -20,6 +20,7 @@ const { name } = (props) => {{
 		</div>
 	);
 }};
+
 export default { name };"""
     )
     jsx_file.close()
