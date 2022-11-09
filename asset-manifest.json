@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Hi-Im-Simon.github.io/static/css/main.073c9b0a.css",
+    "main.js": "/Hi-Im-Simon.github.io/static/js/main.78b069ee.js",
+    "static/js/787.2f41dc65.chunk.js": "/Hi-Im-Simon.github.io/static/js/787.2f41dc65.chunk.js",
+    "static/media/logo.svg": "/Hi-Im-Simon.github.io/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Hi-Im-Simon.github.io/index.html",
+    "main.073c9b0a.css.map": "/Hi-Im-Simon.github.io/static/css/main.073c9b0a.css.map",
+    "main.78b069ee.js.map": "/Hi-Im-Simon.github.io/static/js/main.78b069ee.js.map",
+    "787.2f41dc65.chunk.js.map": "/Hi-Im-Simon.github.io/static/js/787.2f41dc65.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.78b069ee.js"
+  ]
+}
