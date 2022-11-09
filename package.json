@@ -1,7 +1,7 @@
 {
   "name": "github-portfolio",
   "version": "0.1.0",
-  "homepage": "https://hi-im-simon.github.io/Hi-Im-Simon.github.io",
+  "homepage": "https://hi-im-simon.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
