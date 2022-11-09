@@ -1,0 +1,12 @@
+.App {
+    background: black;
+    display: flex;
+}
+
+.game-left {
+    left: 0;
+}
+
+.game-right {
+    right: 0;
+}

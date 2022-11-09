@@ -1,0 +1,12 @@
+.Game {
+    background: lightgray;
+    border: 5px solid red;
+    box-sizing: border-box;
+    height: 100vh;
+    flex: 0 0 300px;
+    top: 0;
+}
+
+.Game canvas {
+    height: 100%;
+}
