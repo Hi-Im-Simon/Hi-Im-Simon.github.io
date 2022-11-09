@@ -12,6 +12,7 @@ else:
     jsx_file = open(jsx_path, 'w+')
     jsx_file.write(
 f"""import './{ name }.css';
+
 const { name } = (props) => {{
 	return (
 		<div className='{ name }'>
