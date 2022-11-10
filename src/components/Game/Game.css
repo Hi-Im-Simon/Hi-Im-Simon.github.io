@@ -1,9 +1,9 @@
 .Game {
     background: lightgray;
-    border: 5px solid red;
+    border: 2px solid red;
     box-sizing: border-box;
     height: 100vh;
-    flex: 0 0 300px;
+    flex: 0 0 auto;
     top: 0;
 }
 
