@@ -15,8 +15,8 @@ const createStaringParts = (ch, cw, sr) => {
 
     let otherParts = [
         // Matter.Bodies.circle(cw/2, sr*100, sr*50),
-        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.A, { render: { fillStyle: 'red' } }),
-        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.E, { render: { fillStyle: 'red' } }),
+        // Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.A, { render: { fillStyle: 'red' } }),
+        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.H, { render: { fillStyle: 'red' } }),
         Matter.Bodies.circle(cw / 3, sr * 50, sr * 50),
     ];
 
