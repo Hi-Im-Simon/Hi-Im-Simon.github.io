@@ -1,12 +1,12 @@
 import './Game.css'; 
 import { useEffect, useRef } from 'react';
 import Matter from 'matter-js';
-import { runGame } from './game1';
+import { renderGame } from './game1';
 
 const Game = (props) => {
 
 	useEffect(() => {
-		const [Engine, Render] = runGame(props.id);
+		const [Engine, Render] = renderGame(props.id);
 		return () => {	// on re-render: remove currently generated canvas and engine to prevent multiple canvas generations
 			Matter.World.clear(Engine.world);
 			Matter.Render.stop(Render);

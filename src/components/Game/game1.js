@@ -1,6 +1,10 @@
 import Matter from 'matter-js';
 
-const createParts = (ch, cw, sr) => {
+Matter.Common.setDecomp(require('poly-decomp'));
+
+const letters = require('./letters.json');
+
+const createStaringParts = (ch, cw, sr) => {
     let walls = [
         // add static objects
         Matter.Bodies.rectangle(cw / 2, -500, cw, 1000, { isStatic: true }),       // top
@@ -9,29 +13,24 @@ const createParts = (ch, cw, sr) => {
         Matter.Bodies.rectangle(cw + 500, ch / 2, 1000, ch, { isStatic: true }),   // right
     ];
 
-    let letters = [
+    let otherParts = [
         // Matter.Bodies.circle(cw/2, sr*100, sr*50),
-        Matter.Bodies.fromVertices(cw / 2, sr * 100, [
-            { x: -20, y: 0 },
-            { x: 0, y: 50 },
-            { x: 25, y: 25 },
-            { x: 50, y: 50 },
-            { x: 50, y: 0 }
-        ]),
+        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.A, { render: { fillStyle: 'red' } }),
+        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.E, { render: { fillStyle: 'red' } }),
         Matter.Bodies.circle(cw / 3, sr * 50, sr * 50),
     ];
 
-    for (let part of letters) {
+    for (let part of otherParts) {
         part.restitution = 0.25;
     }
 
-    return [...walls, ...letters];
+    return [...walls, ...otherParts];
 };
 
-export const runGame = (id) => {
+export const renderGame = (id) => {
     let Engine = Matter.Engine.create();
     const ch = document.body.clientHeight;
-    const cw = ch / 3;  // adjust game window width here
+    const cw = ch / 2;  // adjust game window width here
     const sr = ch / 925;    // size ratio (base = 1)
 
     const Render = Matter.Render.create({
@@ -44,7 +43,7 @@ export const runGame = (id) => {
             background: 'transparent',
         }
     });
-    // 
+    
     const Mouse = Matter.Mouse.create(Render.canvas);
     const MouseConstraint = Matter.MouseConstraint.create(Engine, {
         mouse: Mouse,
@@ -54,10 +53,8 @@ export const runGame = (id) => {
     });
     Render.mouse = Mouse;
 
-    const parts = createParts(ch, cw, sr);
-
     Matter.World.add(Engine.world, [
-        ...parts,
+        ...createStaringParts(ch, cw, sr),
         MouseConstraint,
     ]);
 
