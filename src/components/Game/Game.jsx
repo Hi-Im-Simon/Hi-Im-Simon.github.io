@@ -8,7 +8,7 @@ const Game = (props) => {
 	const engine = useRef(Engine.create());
 
 	useEffect(() => {
-		const cw = 450;
+		const cw = 400;
 		const ch = document.body.clientHeight;
 
 		const render = Render.create({
@@ -42,7 +42,7 @@ const Game = (props) => {
 			render.context = null;
 			render.textures = {};
 		}
-	}, [])
+	}, []);
 
 	const handleDown = () => {
 		isPressed.current = true;
@@ -71,13 +71,14 @@ const Game = (props) => {
 	}
 
 	return (
-		<div className='Game' id={ props.id }
+		<div
+			className='Game' 
+			id={ props.id }
 			onMouseDown={ handleDown }
 			onMouseUp={ handleUp }
 			onMouseMove={ handleAddCircle }
-		>
-			<div ref={ scene } style={{ width: '100%', height: '100%' }} />
-		</div>
+			ref={ scene }
+		/>
 	);
 };
 
