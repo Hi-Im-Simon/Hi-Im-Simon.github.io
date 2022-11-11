@@ -1,6 +1,6 @@
 .Game {
     background: black;
-    border: 2px solid red;
+    border: 2px solid gray;
     box-sizing: border-box;
     height: 100vh;
     flex: 0 0 auto;
