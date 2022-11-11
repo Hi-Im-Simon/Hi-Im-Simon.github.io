@@ -7,16 +7,13 @@ const letters = require('./letters.json');
 const createStaringParts = (ch, cw, sr) => {
     let walls = [
         // add static objects
-        Matter.Bodies.rectangle(cw / 2, -500, cw, 1000, { isStatic: true }),       // top
-        Matter.Bodies.rectangle(-500, ch / 2, 1000, ch, { isStatic: true }),       // left
+        // Matter.Bodies.rectangle(cw / 2, -500, cw, 1000, { isStatic: true }),       // top
+        Matter.Bodies.rectangle(-500, ch * 5, 1000, ch * 10, { isStatic: true }),       // left
         Matter.Bodies.rectangle(cw / 2, ch + 500, cw, 1000, { isStatic: true }),   // bottom
-        Matter.Bodies.rectangle(cw + 500, ch / 2, 1000, ch, { isStatic: true }),   // right
+        Matter.Bodies.rectangle(cw + 500, ch * 5, 1000, ch * 10, { isStatic: true }),   // right
     ];
 
     let otherParts = [
-        // Matter.Bodies.circle(cw/2, sr*100, sr*50),
-        // Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.A, { render: { fillStyle: 'red' } }),
-        Matter.Bodies.fromVertices(cw / 2, sr * 100, letters.H, { render: { fillStyle: 'red' } }),
         Matter.Bodies.circle(cw / 3, sr * 50, sr * 50),
     ];
 
@@ -58,8 +55,28 @@ export const renderGame = (id) => {
         MouseConstraint,
     ]);
 
+    // additional engine settings
+    Engine.world.gravity.y = 0.1;
     Matter.Runner.run(Engine);
     Matter.Render.run(Render);
+    
+    // set delay to spawn other parts
+    let parts = ['H', 'i', '-', 'I', 'm', '-', 'S', 'i', 'm', 'o', 'n'];
+    let spawn = 0;
+    for (let i = 0; i < parts.length; i++) {
+        const part = Matter.Bodies.fromVertices(0, 0, letters[parts[i]], {
+            render: {
+                fillStyle: '#58a6ff',
+            }
+        });
+        Matter.Body.rotate(part, 3 * (Math.PI / 2));
+        spawn -= (part.bounds.max.y - part.bounds.min.y + 100);
+        Matter.Body.scale(part, 2 * sr, 2 * sr);
+        Matter.Body.setPosition(part, { x: cw / 2,  y: spawn });
+        
+        Matter.World.add(Engine.world, part);
+
+    }
 
     return [Engine, Render];
 };
