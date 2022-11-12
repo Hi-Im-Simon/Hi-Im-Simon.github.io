@@ -1,12 +1,27 @@
 .Game {
+    position: relative;
     background: black;
     border: 2px solid gray;
     box-sizing: border-box;
     height: 100vh;
+    width: 50vh;
+    max-height: 929px;
+    max-width: 419.5px;
     flex: 0 0 auto;
     top: 0;
 }
 
 .Game canvas {
     height: 100%;
+    width: 100%;
+}
+
+button {
+    position: absolute;
+    width: 20%;
+    height: 5%;
+}
+
+button.builderMode {
+    right: 0;
 }

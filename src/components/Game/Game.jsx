@@ -4,21 +4,21 @@ import { useEffect, useState } from 'react';
 import * as Games from '../../lib//games/gamesIndex';
 
 const Game = (props) => {
-	const [Game, _setGame] = useState(false);
+	const [Game, setGame] = useState(false);
+	const [functionalButtons, setFunctionalButtons] = useState({});
 
-	function openGame(gameName) {
+	function startGame() {
+		if (Game) Game.kill();
 		const element = document.getElementById(props.id);
-		_setGame(new Games[gameName](element));
+		setGame(new Games[props.gameName](element));
 	}
 
 	useEffect(() => {
 		// if game is not yet rendered, render it
-		if (!Game) {
-			openGame(props.game);
-		} 
-		// on re-render: remove currently generated canvas and engine to prevent multiple canvas generations
-		// return () => { if (Game) Game.kill() };
+		startGame();
+		while (!Game.functionalButtons)
 
+		console.log(Game.functionalButtons)
 		// disable warnings about argument passing
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -27,7 +27,28 @@ const Game = (props) => {
 		<div
 			className='Game' 
 			id={ props.id }
-		/>
+		>
+			<button 
+				className='reset'
+				onClick={ () => startGame() }
+			>
+				Reset
+			</button>
+			{ Game.functionalButtons &&
+				Object.keys(Game.functionalButtons).map(key => 
+					<button key={ key }
+						className={ key }
+						onClick={ () => {
+							Game.functionalButtons[key] = !Game.functionalButtons[key];
+							setFunctionalButtons({ ...functionalButtons, [key]: Game.functionalButtons[key] });
+						}}
+						style={ functionalButtons[key] ? { background: 'green' } : { background: 'red' } }
+					>
+						{ key }
+					</button>
+				)
+			}
+		</div>
 	);
 };
 

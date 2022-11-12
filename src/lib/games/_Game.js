@@ -6,9 +6,9 @@ const lettersVerts = require('../../static/letters.json');
 
 export default class Game {
     constructor(element) {
-        this.ch = document.body.clientHeight;
-        this.cw = this.ch / 2;  // adjust game window width here
-        this.sr = this.ch / 925;    // size ratio (base = 1)
+        this.ch = element.offsetHeight;
+        this.cw = element.offsetWidth;  // adjust game window width here
+        this.sr = this.ch / 929;    // size ratio (base = 1)
 
         this.Engine = Matter.Engine.create();
         this.Render = Matter.Render.create({
@@ -21,7 +21,8 @@ export default class Game {
                 background: 'transparent',
             }
         });
-        
+
+        this.functionalButtons = {};
         this.parts = [];
         this.Engine.world.gravity.y = 0.2 * this.sr;
 
@@ -62,7 +63,7 @@ export default class Game {
 
     showLetter(letter, color = '#ffffff', x = this.mousePosition[0], y = this.mousePosition[1], scale = 1) {
         if (lettersVerts['letters'].includes(letter)) {
-            const part = Matter.Bodies.fromVertices(x * this.sr, y * this.sr, lettersVerts[letter], {
+            const part = Matter.Bodies.fromVertices(x, y, lettersVerts[letter], {
                 render: {
                     fillStyle: color,
                 }
@@ -70,6 +71,7 @@ export default class Game {
             Matter.Body.scale(part, scale * this.sr, scale * this.sr);
 
             this.showParts(part);
+            return part;
         }
     }
 
@@ -78,6 +80,21 @@ export default class Game {
         Matter.World.add(this.Engine.world, parts);
         if (parts.isArray) this.parts.concat(parts);
         else this.parts.push(parts);
+    }
+
+    removeParts(parts) {
+        // remove elements
+        Matter.World.remove(this.Engine.world, parts);
+        if (parts.isArray) {
+            for (let part of parts) {
+                const i = this.parts.indexOf(part);
+                this.parts.splice(i, 1);
+            }
+        }
+        else {
+            const i = this.parts.indexOf(parts);
+            this.parts.splice(i, 1);
+        }
     }
 
     bindEvents() {}
