@@ -9,6 +9,7 @@ export default class Game0 extends Game {
     constructor(...args) {
         super(...args);
         this.mousePosition = false;
+        this.isPressed = { left: false };
 
         this.functionalButtons = {
             builderMode: false,
@@ -71,7 +72,9 @@ export default class Game0 extends Game {
             }
 
             this.showParts(particle);
-            setTimeout(() => this.removeParts(particle), 250);
+
+            // if LMB is pressed, don't remove particles
+            if(!this.isPressed.left) setTimeout(() => this.removeParts(particle), 250);
 
             // colors are values 3 - 12 (in hex)
             if (phase === 0) if (++g >= 12) phase = 1;
@@ -94,6 +97,10 @@ export default class Game0 extends Game {
             }
         }, false);
 
+        // create particles on LMB press
+        this.element.onmousedown = () => this.isPressed.left = true;
+        this.element.onmouseup = () => this.isPressed.left = false;
+
         // save current mouse position on mouse move
         document.onmousemove = (event) => {
             if (event.target === this.Render.element.getElementsByTagName('canvas')[0]) {
@@ -106,5 +113,7 @@ export default class Game0 extends Game {
                 this.mousePosition = false;
             }
         }
+
+        
     }
 }

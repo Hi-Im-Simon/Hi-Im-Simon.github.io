@@ -6,6 +6,7 @@ const lettersVerts = require('../../static/letters.json');
 
 export default class Game {
     constructor(element) {
+        this.element = element;
         this.ch = element.offsetHeight;
         this.cw = element.offsetWidth;  // adjust game window width here
         this.sr = this.ch / 929;    // size ratio (base = 1)

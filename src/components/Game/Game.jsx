@@ -16,7 +16,7 @@ const Game = (props) => {
 	useEffect(() => {
 		// if game is not yet rendered, render it
 		startGame();
-		// disable warnings about argument passing
+		// disable warnings about argument passing in case any are needed in the future
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
