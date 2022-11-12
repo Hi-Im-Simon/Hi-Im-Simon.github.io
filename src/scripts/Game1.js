@@ -1,17 +1,14 @@
 import Matter from 'matter-js';
-import Game from './_Game';
+import Game from './Game';
 const lettersVerts = require('../static/letters.json');
 
-export default class Game0 extends Game {
+export default class Game1 extends Game {
     constructor(...args) {
         super(...args);
         this.mousePosition = false;
-    }
-    createParts() {
-        let otherParts = [
-        ];
-
-        this.showParts([...this.createWalls(), ...otherParts]);
+        
+        this.bindEvents();
+        this._addMouseControl();
     }
 
     showLetter(letter, x=this.mousePosition[0], y=this.mousePosition[1], color='#ffffff', scale=1) {

@@ -1,9 +1,15 @@
 import Matter from 'matter-js';
-import Game from './_Game';
+import Game from './Game';
 const lettersVerts = require('../static/letters.json');
 
 export default class Game0 extends Game {
-    createParts() {
+    constructor(...args) {
+        super(...args);
+        
+        this._addMouseControl();
+    }
+
+    _createParts() {
         let letters = [];
         let spawn = 0;
         for (let letter of ['H', 'i', '-', 'I', 'm', '-', 'S', 'i', 'm', 'o', 'n']) {
@@ -28,6 +34,6 @@ export default class Game0 extends Game {
             part.restitution = 0.25;
         }
 
-        this.showParts([...this.createWalls(), ...letters, ...otherParts]);
+        this.showParts([...this._createWalls(), ...letters, ...otherParts]);
     }
 }
