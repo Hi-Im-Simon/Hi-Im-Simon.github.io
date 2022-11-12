@@ -5,7 +5,7 @@ import { renderGame } from '../../scripts/renderGame';
 
 const Game = (props) => {
 
-	useEffect(() => {
+	useEffect((props) => {
 		const [Engine, Render] = renderGame(props.id, props.game);
 		return () => {	// on re-render: remove currently generated canvas and engine to prevent multiple canvas generations
 			if (Engine && Render) {
