@@ -8,8 +8,4 @@ export default class Game1 extends Game {
         
         this.addMouseControl();
     }
-
-    
-
-    
 }

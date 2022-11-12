@@ -23,7 +23,7 @@ export default class Game {
         });
         
         this.parts = [];
-        this.Engine.world.gravity.y = 0.2;
+        this.Engine.world.gravity.y = 0.2 * this.sr;
 
         Matter.Runner.run(this.Engine);
         Matter.Render.run(this.Render);

@@ -27,12 +27,16 @@ export default class Game0 extends Game {
                     fillStyle: letters[i][1],
                 }
             });
+            const width = part.bounds.max.x - part.bounds.min.x;
+
+            spawn -= ((width + 15) * this.sr);
 
             Matter.Body.rotate(part, 3 * (Math.PI / 2));
-            spawn -= (part.bounds.max.y - part.bounds.min.y + 100);
-            Matter.Body.scale(part, 2 * this.sr, 2 * this.sr);
+            Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
             Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
             Matter.Body.setMass(part, 2000);
+
+            spawn -= ((width + 15) * this.sr);
             letters[i] = part;
         }
 
