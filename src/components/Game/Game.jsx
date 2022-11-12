@@ -5,17 +5,17 @@ import * as Games from '../../lib//games/gamesIndex';
 
 const Game = (props) => {
 	const [Game, setGame] = useState(false);
-	const [functionalButtons, setFunctionalButtons] = useState({});
+	const [boolButtons, setBoolButtons] = useState({});
 
-	function startGame() {
+	function startGame(spawnTitle=false) {
 		if (Game) Game.kill();
 		const element = document.getElementById(props.id);
-		setGame(new Games[props.gameName](element));
+		setGame(new Games[props.gameName](element, spawnTitle));
 	}
 
 	useEffect(() => {
 		// if game is not yet rendered, render it
-		startGame();
+		startGame(true);
 		// disable warnings about argument passing in case any are needed in the future
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -31,15 +31,15 @@ const Game = (props) => {
 			>
 				Reset
 			</button>
-			{ Game.functionalButtons &&
-				Object.keys(Game.functionalButtons).map(key => 
+			{ Game.boolButtons &&
+				Object.keys(Game.boolButtons).map(key => 
 					<button key={ key }
 						className={ key }
 						onClick={ () => {
-							Game.functionalButtons[key] = !Game.functionalButtons[key];
-							setFunctionalButtons({ ...functionalButtons, [key]: Game.functionalButtons[key] });
+							Game.boolButtons[key] = !Game.boolButtons[key];
+							setBoolButtons({ ...boolButtons, [key]: Game.boolButtons[key] });
 						}}
-						style={ functionalButtons[key] ? { background: 'green' } : { background: 'red' } }
+						style={ boolButtons[key] ? { background: 'green' } : { background: 'red' } }
 					>
 						{ key }
 					</button>

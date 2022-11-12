@@ -23,15 +23,12 @@ export default class Game {
             }
         });
 
-        this.functionalButtons = {};
+        this.boolButtons = {};
         this.parts = [];
         this.Engine.world.gravity.y = 0.2 * this.sr;
 
         Matter.Runner.run(this.Engine);
         Matter.Render.run(this.Render);
-
-        this.bindEvents();
-        this.showStartingParts();
     }
 
     _createWalls() {

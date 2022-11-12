@@ -6,45 +6,52 @@ import { getRandomColor } from '../../lib/getRandomColor';
 const lettersVerts = require('../../static/letters.json');
 
 export default class Game0 extends Game {
-    constructor(...args) {
-        super(...args);
+    constructor(element, spawnTitle) {
+        super(element);
+        this.spawnTitle = spawnTitle;
         this.mousePosition = false;
         this.isPressed = { left: false };
 
-        this.functionalButtons = {
+        this.boolButtons = {
             builderMode: false,
         };
 
+        this.showStartingParts();
+        this.bindEvents();
         this.addMouseControl();
         this.createMouseEffect();
     }
 
     showStartingParts() {
-        let letters = [
-            ['H', '#58a6ff'], ['i', '#58a6ff'], ['-', 'white'],
-            ['I', '#58a6ff'], ['m', '#58a6ff'], ['-', 'white'],
-            ['S', 'orange'], ['i', 'orange'], ['m', 'orange'], ['o', 'orange'], ['n', 'orange'],
-        ];
+        let letters = [];
+        if (this.spawnTitle) {
+            letters = [
+                ['H', '#58a6ff'], ['i', '#58a6ff'], ['-', 'white'],
+                ['I', '#58a6ff'], ['m', '#58a6ff'], ['-', 'white'],
+                ['S', 'orange'], ['i', 'orange'], ['m', 'orange'], ['o', 'orange'], ['n', 'orange'],
+            ];
 
-        let spawn = 0;
-        for (let i = 0; i < letters.length; i++) {
-            const part = Matter.Bodies.fromVertices(0, 0, lettersVerts[letters[i][0]], {
-                render: {
-                    fillStyle: letters[i][1],
-                }
-            });
-            const width = part.bounds.max.x - part.bounds.min.x;
+            let spawn = 0;
+            for (let i = 0; i < letters.length; i++) {
+                const part = Matter.Bodies.fromVertices(0, 0, lettersVerts[letters[i][0]], {
+                    render: {
+                        fillStyle: letters[i][1],
+                    }
+                });
+                const width = part.bounds.max.x - part.bounds.min.x;
 
-            spawn -= ((width + 15) * this.sr);
+                spawn -= ((width + 15) * this.sr);
 
-            Matter.Body.rotate(part, 3 * (Math.PI / 2));
-            Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
-            Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
-            Matter.Body.setMass(part, 2000);
+                Matter.Body.rotate(part, 3 * (Math.PI / 2));
+                Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
+                Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
+                Matter.Body.setMass(part, 2000);
 
-            spawn -= ((width + 15) * this.sr);
-            letters[i] = part;
+                spawn -= ((width + 15) * this.sr);
+                letters[i] = part;
+            }
         }
+        
 
         let otherParts = [
             
@@ -66,15 +73,16 @@ export default class Game0 extends Game {
             });
             
             // disable collision for elements if in builder mode
-            if (this.functionalButtons.builderMode) {
+            if (this.boolButtons.builderMode) {
                 particle.collisionFilter = { group: -1 };
                 Matter.Body.scale(particle, 0.5, 0.5);
             }
 
             this.showParts(particle);
 
-            // if LMB is pressed, don't remove particles
-            if(!this.isPressed.left) setTimeout(() => this.removeParts(particle), 250);
+            console.log(this.boolButtons.builderMode)
+            // if LMB is pressed and not in building mode, don't remove particles
+            if(!this.isPressed.left || this.boolButtons.builderMode) setTimeout(() => this.removeParts(particle), 250);
 
             // colors are values 3 - 12 (in hex)
             if (phase === 0) if (++g >= 12) phase = 1;
