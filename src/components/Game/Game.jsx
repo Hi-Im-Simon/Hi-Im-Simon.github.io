@@ -1,19 +1,26 @@
 import './Game.css'; 
-import { useEffect, useRef } from 'react';
-import Matter from 'matter-js';
+import { useEffect, useState } from 'react';
 
-import Game0 from '../../scripts/Game0';
-import Game1 from '../../scripts/Game1';
+import * as Games from '../../lib//games/gamesIndex';
 
 const Game = (props) => {
+	const [Game, _setGame] = useState(false);
+
+	function openGame(gameName) {
+		const element = document.getElementById(props.id);
+		_setGame(new Games[gameName](element));
+	}
 
 	useEffect(() => {
-		let Game = false;
-		if (props.game === 0) Game = new Game0(document.getElementById(props.id));
-		if (props.game === 1) Game = new Game1(document.getElementById(props.id));
-
+		// if game is not yet rendered, render it
+		if (!Game) {
+			openGame(props.game);
+		} 
 		// on re-render: remove currently generated canvas and engine to prevent multiple canvas generations
-		return () => { if (Game) Game.kill() };
+		// return () => { if (Game) Game.kill() };
+
+		// disable warnings about argument passing
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
