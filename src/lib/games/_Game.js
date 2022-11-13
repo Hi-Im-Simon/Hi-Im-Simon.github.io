@@ -26,8 +26,9 @@ export default class Game {
         this.boolButtons = {};
         this.functionalButtons = {};
         this.parts = [];
+        
         this.Engine.world.gravity.y = 0.2 * this.sr;
-
+        
         Matter.Runner.run(this.Engine);
         Matter.Render.run(this.Render);
     }
@@ -39,6 +40,34 @@ export default class Game {
             Matter.Bodies.rectangle(this.cw / 2, this.ch + 500, this.cw, 1000, { isStatic: true }),   // bottom
             Matter.Bodies.rectangle(this.cw + 500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),   // right
         ];
+    }
+
+    // set how fast should the element move with every tick and if it should ignore the world's gravity
+    // x, y default is 0 0 false
+    setGravity(element, x = 0, y = 0, ignoreWorldGravity = true) {
+        const gravity = this.Engine.world.gravity;
+        let nx = 0, ny = 0;
+        if (ignoreWorldGravity) {
+            nx += (-gravity.x * gravity.scale * element.mass);
+            ny += (-gravity.y * gravity.scale * element.mass);
+        }
+        nx += (x * gravity.scale * element.mass * this.sr);
+        ny += (y * gravity.scale * element.mass * this.sr);
+
+        if (!element.gravity) {
+            element.gravity = [nx, ny];
+
+            Matter.Events.on(this.Engine, 'beforeUpdate', () => {
+                x = element.gravity[0];
+                y = element.gravity[1];
+
+                Matter.Body.applyForce(element, element.position, {
+                    x: x,
+                    y: y
+                });
+            });
+        }
+        else element.gravity = [nx, ny];
     }
 
     addMouseControl() {
@@ -68,7 +97,7 @@ export default class Game {
                 }
             });
             Matter.Body.scale(part, scale * this.sr, scale * this.sr);
-
+            this.setGravity(part, 0, 1.5);
             this.showParts(part);
             return part;
         }
@@ -94,6 +123,27 @@ export default class Game {
             const i = this.parts.indexOf(parts);
             this.parts.splice(i, 1);
         }
+    }
+
+    eventSaveMousePosition() {
+        // save current mouse position on mouse move
+        this.element.onmousemove = (event) => {
+            if (event.target === this.Render.element.getElementsByTagName('canvas')[0]) {
+                var rect = event.target.getBoundingClientRect();
+                var x = (event.clientX - rect.left) * (925 / rect.height) * this.sr; //x position within the element
+                var y = (event.clientY - rect.top) * (925 / rect.height) * this.sr;  //y position within the element
+                this.mousePosition = [x, y];
+            }
+            else {
+                this.mousePosition = false;
+            }
+        }
+    }
+
+    // detect when mouse buttons are pressed and released
+    eventDetectMousePress() {
+        this.element.onmousedown = () => this.isPressed.left = true;
+        this.element.onmouseup = () => this.isPressed.left = false;
     }
 
     bindEvents() {}

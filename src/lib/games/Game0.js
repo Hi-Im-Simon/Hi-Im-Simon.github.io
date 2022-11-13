@@ -22,11 +22,11 @@ export default class Game0 extends Game {
         this.functionalButtons = {
             spawnTitle: () => this.showTitle(),
         };
-
+        
         this.showStartingParts();
         this.bindEvents();
         this.addMouseControl();
-        this.createMouseEffect();
+        this.addMouseEffect();
     }
 
     showTitle() {
@@ -75,7 +75,7 @@ export default class Game0 extends Game {
     }
 
     // create mouse moving effect
-    createMouseEffect(r=0, g=0, b=12, phase=0) {
+    addMouseEffect(r=0, g=0, b=12, phase=0) {
         if (this.mousePosition) {
             const particle = Matter.Bodies.circle(...this.mousePosition, ((Math.random() * 8) + 2) * this.sr, {
                 render: {
@@ -93,6 +93,7 @@ export default class Game0 extends Game {
 
             // if LMB is pressed and not in building mode, don't remove particles
             if(!this.isPressed.left || this.boolButtons.builderMode) setTimeout(() => this.removeParts(particle), 250);
+            else this.setGravity(particle, 0, 0.5, false);
 
             // colors are values 3 - 12 (in hex)
             if (phase === 0) if (++g >= 12) phase = 1;
@@ -103,7 +104,7 @@ export default class Game0 extends Game {
             if (phase === 5) if (--r <= 3) phase = 0;
         }
 
-        setTimeout(() => this.createMouseEffect(r, g, b, phase), 10);
+        setTimeout(() => this.addMouseEffect(r, g, b, phase), 10);
     }
 
     bindEvents() {
@@ -115,21 +116,7 @@ export default class Game0 extends Game {
             }
         }, false);
 
-        // create particles on LMB press
-        this.element.onmousedown = () => this.isPressed.left = true;
-        this.element.onmouseup = () => this.isPressed.left = false;
-
-        // save current mouse position on mouse move
-        document.onmousemove = (event) => {
-            if (event.target === this.Render.element.getElementsByTagName('canvas')[0]) {
-                var rect = event.target.getBoundingClientRect();
-                var x = (event.clientX - rect.left) * (925 / rect.height) * this.sr; //x position within the element
-                var y = (event.clientY - rect.top) * (925 / rect.height) * this.sr;  //y position within the element
-                this.mousePosition = [x, y];
-            }
-            else {
-                this.mousePosition = false;
-            }
-        }
+        this.eventDetectMousePress();
+        this.eventSaveMousePosition();
     }
 }
