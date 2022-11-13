@@ -30,6 +30,7 @@
 }
 
 button {
+    position: relative;
     height: 50px;
     width: 100%;
     font-size: 110%;
@@ -45,7 +46,16 @@ button.reset {
     background: #74bef3;
 }
 
-button.builderMode {
+button:hover::after {
+    border: 1px solid red;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    padding: 12px 0;
+    left: 100%;
+    content: 'Add';
+    color: white;
 }
 
 button.bool {
