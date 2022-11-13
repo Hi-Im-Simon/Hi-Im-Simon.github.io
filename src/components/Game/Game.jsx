@@ -34,7 +34,7 @@ const Game = (props) => {
 						className='reset'
 						onClick={ () => {
 							startGame();
-							setBoolButtons({ ...Game.boolButtonsDefault });
+							setBoolButtons({ ...Game._boolButtonsDefault });
 						}}
 					>reset</button>
 
@@ -46,7 +46,7 @@ const Game = (props) => {
 									Game.boolButtons[key] = !Game.boolButtons[key];
 									setBoolButtons({ ...boolButtons, [key]: Game.boolButtons[key] });
 								}}
-								style={ boolButtons[key] ? { background: '#5da365' } : { background: '#f75959' } }
+								style={ Game.boolButtons[key] ? { background: '#5da365' } : { background: '#f75959' } }
 							>
 								{ key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() }
 							</button>

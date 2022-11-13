@@ -12,13 +12,13 @@ export default class Game0 extends Game {
         this.mousePosition = false;
         this.isPressed = { left: false };
 
-        this.boolButtonsDefault = {
+        // default values of button states, DON'T CHANGE IN CODE
+        this._boolButtonsDefault = {
             builderMode: false,
         };
+        // current values of button states
+        this.boolButtons = this._boolButtonsDefault;
 
-        this.boolButtons = {
-            builderMode: false,
-        };
         this.functionalButtons = {
             spawnTitle: () => this.showTitle(),
         };
@@ -27,10 +27,6 @@ export default class Game0 extends Game {
         this.bindEvents();
         this.addMouseControl();
         this.createMouseEffect();
-    }
-
-    fuck() {
-        console.log('chuj')
     }
 
     showTitle() {
@@ -115,7 +111,7 @@ export default class Game0 extends Game {
         document.addEventListener('keydown', (event) => {
             const key = event.key.toUpperCase();
             if (this.mousePosition) {
-                this.showLetter(key, getRandomColor());
+                this.showLetter(key, getRandomColor(6, 3, 15));
             }
         }, false);
 
@@ -135,7 +131,5 @@ export default class Game0 extends Game {
                 this.mousePosition = false;
             }
         }
-
-        
     }
 }
