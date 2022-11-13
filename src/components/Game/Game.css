@@ -16,12 +16,31 @@
     width: 100%;
 }
 
-button {
+.buttons {
     position: absolute;
-    width: 20%;
-    height: 5%;
+    width: 80px;
+}
+
+button {
+    height: 50px;
+    width: 100%;
+    font-size: 110%;
+    border-radius: 20%;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.reset {
+    background: #74bef3;
 }
 
 button.builderMode {
-    right: 0;
+}
+
+button.bool {
+}
+
+button.functional {
 }

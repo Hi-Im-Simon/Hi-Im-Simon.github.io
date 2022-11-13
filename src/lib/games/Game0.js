@@ -6,14 +6,21 @@ import { getRandomColor } from '../../lib/getRandomColor';
 const lettersVerts = require('../../static/letters.json');
 
 export default class Game0 extends Game {
-    constructor(element, spawnTitle) {
+    constructor(element, firstRender) {
         super(element);
-        this.spawnTitle = spawnTitle;
+        this.firstRender = firstRender;
         this.mousePosition = false;
         this.isPressed = { left: false };
 
+        this.boolButtonsDefault = {
+            builderMode: false,
+        };
+
         this.boolButtons = {
             builderMode: false,
+        };
+        this.functionalButtons = {
+            spawnTitle: () => this.showTitle(),
         };
 
         this.showStartingParts();
@@ -22,36 +29,44 @@ export default class Game0 extends Game {
         this.createMouseEffect();
     }
 
-    showStartingParts() {
-        let letters = [];
-        if (this.spawnTitle) {
-            letters = [
-                ['H', '#58a6ff'], ['i', '#58a6ff'], ['-', 'white'],
-                ['I', '#58a6ff'], ['m', '#58a6ff'], ['-', 'white'],
-                ['S', 'orange'], ['i', 'orange'], ['m', 'orange'], ['o', 'orange'], ['n', 'orange'],
-            ];
+    fuck() {
+        console.log('chuj')
+    }
 
-            let spawn = 0;
-            for (let i = 0; i < letters.length; i++) {
-                const part = Matter.Bodies.fromVertices(0, 0, lettersVerts[letters[i][0]], {
-                    render: {
-                        fillStyle: letters[i][1],
-                    }
-                });
-                const width = part.bounds.max.x - part.bounds.min.x;
+    showTitle() {
+        let letters = [
+            ['H', '#58a6ff'], ['i', '#58a6ff'], ['-', 'white'],
+            ['I', '#58a6ff'], ['m', '#58a6ff'], ['-', 'white'],
+            ['S', 'orange'], ['i', 'orange'], ['m', 'orange'], ['o', 'orange'], ['n', 'orange'],
+        ];
 
-                spawn -= ((width + 15) * this.sr);
+        let spawn = 0;
+        for (let i = 0; i < letters.length; i++) {
+            const part = Matter.Bodies.fromVertices(0, 0, lettersVerts[letters[i][0]], {
+                render: {
+                    fillStyle: letters[i][1],
+                }
+            });
+            const width = part.bounds.max.x - part.bounds.min.x;
 
-                Matter.Body.rotate(part, 3 * (Math.PI / 2));
-                Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
-                Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
-                Matter.Body.setMass(part, 2000);
+            spawn -= ((width + 15) * this.sr);
 
-                spawn -= ((width + 15) * this.sr);
-                letters[i] = part;
-            }
+            Matter.Body.rotate(part, 3 * (Math.PI / 2));
+            Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
+            Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
+            Matter.Body.setMass(part, 2000);
+
+            spawn -= ((width + 15) * this.sr);
+            letters[i] = part;
         }
-        
+        this.showParts([...letters]);
+    }
+
+    showStartingParts() {
+        // create these parts only if it's the first render of the game 
+        if (this.firstRender) {
+            this.showTitle();
+        }
 
         let otherParts = [
             
@@ -60,13 +75,13 @@ export default class Game0 extends Game {
             part.restitution = 0.25;
         }
 
-        this.showParts([...this._createWalls(), ...letters, ...otherParts]);
+        this.showParts([...this._createWalls(), ...otherParts]);
     }
 
     // create mouse moving effect
     createMouseEffect(r=0, g=0, b=12, phase=0) {
         if (this.mousePosition) {
-            const particle = Matter.Bodies.circle(...this.mousePosition, ((Math.random() * 8) + 4) * this.sr, {
+            const particle = Matter.Bodies.circle(...this.mousePosition, ((Math.random() * 8) + 2) * this.sr, {
                 render: {
                     fillStyle: `#${ r.toString(16) + g.toString(16) + b.toString(16) }`,
                 }
@@ -80,7 +95,6 @@ export default class Game0 extends Game {
 
             this.showParts(particle);
 
-            console.log(this.boolButtons.builderMode)
             // if LMB is pressed and not in building mode, don't remove particles
             if(!this.isPressed.left || this.boolButtons.builderMode) setTimeout(() => this.removeParts(particle), 250);
 

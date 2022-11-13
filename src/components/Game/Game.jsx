@@ -7,10 +7,10 @@ const Game = (props) => {
 	const [Game, setGame] = useState(false);
 	const [boolButtons, setBoolButtons] = useState({});
 
-	function startGame(spawnTitle=false) {
+	function startGame(firstRender=false) {
 		if (Game) Game.kill();
 		const element = document.getElementById(props.id);
-		setGame(new Games[props.gameName](element, spawnTitle));
+		setGame(new Games[props.gameName](element, firstRender));
 	}
 
 	useEffect(() => {
@@ -25,26 +25,41 @@ const Game = (props) => {
 			className='Game' 
 			id={ props.id }
 		>
-			<button 
-				className='reset'
-				onClick={ () => startGame() }
-			>
-				Reset
-			</button>
-			{ Game.boolButtons &&
-				Object.keys(Game.boolButtons).map(key => 
-					<button key={ key }
-						className={ key }
-						onClick={ () => {
-							Game.boolButtons[key] = !Game.boolButtons[key];
-							setBoolButtons({ ...boolButtons, [key]: Game.boolButtons[key] });
-						}}
-						style={ boolButtons[key] ? { background: 'green' } : { background: 'red' } }
-					>
-						{ key }
-					</button>
-				)
-			}
+			<div className='buttons' style={ props.id === 'game-left' ? { left: 0 } : { right: 0 } }>
+				<button 
+					className='reset'
+					onClick={ () => {
+						startGame();
+						setBoolButtons({ ...Game.boolButtonsDefault });
+					}}
+				>reset</button>
+
+				{ Game.boolButtons &&
+					Object.keys(Game.boolButtons).map(key => 
+						<button key={ key }
+							className={ `${ key } bool` }
+							onClick={ () => {
+								Game.boolButtons[key] = !Game.boolButtons[key];
+								setBoolButtons({ ...boolButtons, [key]: Game.boolButtons[key] });
+							}}
+							style={ boolButtons[key] ? { background: '#5da365' } : { background: '#f75959' } }
+						>
+							{ key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() }
+						</button>
+					)
+				}
+
+				{ Game.functionalButtons &&
+					Object.keys(Game.functionalButtons).map(key => 
+						<button key={ key }
+							className={ `${ key } functional` }
+							onClick={ () => Game.functionalButtons[key]() }
+						>
+							{ key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() }
+						</button>
+					)
+				}
+			</div>
 		</div>
 	);
 };

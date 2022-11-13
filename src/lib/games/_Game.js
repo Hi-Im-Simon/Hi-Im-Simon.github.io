@@ -24,6 +24,7 @@ export default class Game {
         });
 
         this.boolButtons = {};
+        this.functionalButtons = {};
         this.parts = [];
         this.Engine.world.gravity.y = 0.2 * this.sr;
 
@@ -34,9 +35,9 @@ export default class Game {
     _createWalls() {
         return [
             // Matter.Bodies.rectangle(cw / 2, -500, cw, 1000, { isStatic: true }),       // top
-            Matter.Bodies.rectangle(-500, this.ch * 5, 1000, this.ch * 10, { isStatic: true }),       // left
+            Matter.Bodies.rectangle(-500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),       // left
             Matter.Bodies.rectangle(this.cw / 2, this.ch + 500, this.cw, 1000, { isStatic: true }),   // bottom
-            Matter.Bodies.rectangle(this.cw + 500, this.ch * 5, 1000, this.ch * 10, { isStatic: true }),   // right
+            Matter.Bodies.rectangle(this.cw + 500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),   // right
         ];
     }
 
