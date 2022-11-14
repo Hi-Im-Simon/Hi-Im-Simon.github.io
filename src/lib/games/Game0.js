@@ -50,9 +50,9 @@ export default class Game0 extends Game {
             Matter.Body.rotate(part, 3 * (Math.PI / 2));
             Matter.Body.scale(part, 1.75 * this.sr, 1.75 * this.sr);
             Matter.Body.setPosition(part, { x: this.cw / 2, y: spawn });
-            Matter.Body.setMass(part, 2000);
 
             spawn -= ((width + 15) * this.sr);
+            this.setGravity(part, 0, 0.05);
             letters[i] = part;
         }
         this.showParts([...letters]);
@@ -88,7 +88,7 @@ export default class Game0 extends Game {
                 particle.collisionFilter = { group: -1 };
                 Matter.Body.scale(particle, 0.5, 0.5);
             }
-
+            
             this.showParts(particle);
 
             // if LMB is pressed and not in building mode, don't remove particles

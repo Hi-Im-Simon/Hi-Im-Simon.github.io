@@ -27,19 +27,25 @@ export default class Game {
         this.functionalButtons = {};
         this.parts = [];
         
-        this.Engine.world.gravity.y = 0.2 * this.sr;
+        this.Engine.world.gravity.y = 0.1 * this.sr;
         
         Matter.Runner.run(this.Engine);
         Matter.Render.run(this.Render);
     }
 
     _createWalls() {
-        return [
+        let walls = [
             // Matter.Bodies.rectangle(cw / 2, -500, cw, 1000, { isStatic: true }),       // top
             Matter.Bodies.rectangle(-500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),       // left
             Matter.Bodies.rectangle(this.cw / 2, this.ch + 500, this.cw, 1000, { isStatic: true }),   // bottom
             Matter.Bodies.rectangle(this.cw + 500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),   // right
         ];
+
+        for (let wall of walls) {
+            wall.dontJoinOnTouch = true;
+        }
+
+        return walls;
     }
 
     // set how fast should the element move with every tick and if it should ignore the world's gravity
@@ -97,7 +103,7 @@ export default class Game {
                 }
             });
             Matter.Body.scale(part, scale * this.sr, scale * this.sr);
-            this.setGravity(part, 0, 1.5);
+            this.setGravity(part, 0, 0.5);
             this.showParts(part);
             return part;
         }
@@ -106,8 +112,15 @@ export default class Game {
     showParts(parts) {
         // create visible elements
         Matter.World.add(this.Engine.world, parts);
-        if (parts.isArray) this.parts.concat(parts);
-        else this.parts.push(parts);
+
+        if (Array.isArray(parts)) {
+            for (let part of parts) {
+                this.parts.push(part);
+            }
+        }
+        else {
+            this.parts.push(parts);
+        }
     }
 
     removeParts(parts) {
@@ -128,16 +141,15 @@ export default class Game {
     eventSaveMousePosition() {
         // save current mouse position on mouse move
         this.element.onmousemove = (event) => {
-            if (event.target === this.Render.element.getElementsByTagName('canvas')[0]) {
-                var rect = event.target.getBoundingClientRect();
-                var x = (event.clientX - rect.left) * (925 / rect.height) * this.sr; //x position within the element
-                var y = (event.clientY - rect.top) * (925 / rect.height) * this.sr;  //y position within the element
-                this.mousePosition = [x, y];
-            }
-            else {
-                this.mousePosition = false;
-            }
-        }
+            const rect = event.target.getBoundingClientRect();
+            let x = (event.clientX - rect.left) * (925 / rect.height) * this.sr; //x position within the element
+            let y = (event.clientY - rect.top) * (925 / rect.height) * this.sr;  //y position within the element
+            this.mousePosition = [x, y];
+        };
+
+        this.element.onmouseleave = (event) => {
+            this.mousePosition = false;
+        };
     }
 
     // detect when mouse buttons are pressed and released
