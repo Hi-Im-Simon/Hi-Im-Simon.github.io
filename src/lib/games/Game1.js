@@ -12,7 +12,6 @@ export default class Game1 extends Game {
 
         // default values of button states, DON'T CHANGE IN CODE
         this._boolButtonsDefault = {
-            snowFall: true,
         };
         // current values of button states
         this.boolButtons = this._boolButtonsDefault;
@@ -21,10 +20,12 @@ export default class Game1 extends Game {
             
         };
 
-        this.valueButtons = {
+        this._valueButtonsDefault = {
             snowIntensity: -0.9,
             windDirection: -0.01,
         };
+
+        this.valueButtons = this._valueButtonsDefault;
 
         this.Engine.world.gravity.y = 0.05 * this.sr;
         
@@ -32,6 +33,10 @@ export default class Game1 extends Game {
         this.bindEvents();
         this.addMouseControl();
         this.addMouseEffect();
+
+        // let p = this.showLetter('P', 'lightblue', 300, 700);
+        // p.isStatic = true;
+        // p.collisionFilter.group = 1;
     }
 
     // override createWalls to make particles sticky to the bottom
@@ -57,9 +62,10 @@ export default class Game1 extends Game {
             particle.collisionFilter = { group: 1 };
 
             // if LMB is pressed and not in building mode, don't remove particles
-            if (!this.isPressed.left) {
-                setTimeout(() => this.removeParts(particle), 250);
-            }
+            // DISABLED
+            // if (!this.isPressed.left) {
+            setTimeout(() => this.removeParts(particle), 250);
+            // }
 
             this.showParts(particle);
         }
@@ -95,27 +101,25 @@ export default class Game1 extends Game {
     //     setTimeout(() => this.mergeColliding(), 100);
     // }
 
-    snowFall() {
-        if (this.boolButtons.snowFall) {
-            let intensity = (this.valueButtons.snowIntensity + 1);
+    eventSnowFall() {
+        let intensity = (this.valueButtons.snowIntensity + 1);
 
-            for (let x = 0; x < this.cw / 10; x++) {
-                if (intensity / 2 >= Math.random()) {
-                    let rand = Math.random();
-                    const particle = Matter.Bodies.circle(x * 10, (-100 + (rand * 20)) * this.sr, (rand + 0.5) * this.sr, {
-                        render: {
-                            fillStyle: this.particleColor,
-                        }
-                    });
+        for (let x = 0; x < this.cw / 10; x++) {
+            if (intensity / 2 >= Math.random()) {
+                let rand = Math.random();
+                const particle = Matter.Bodies.circle(x * 10, (-100 + (rand * 20)) * this.sr, (rand + 0.5) * this.sr, {
+                    render: {
+                        fillStyle: this.particleColor,
+                    }
+                });
 
-                    particle.isParticle = true;
-                    particle.collisionFilter = { group: 1 };
-                    this.showParts(particle);
-                }
+                particle.isParticle = true;
+                particle.collisionFilter = { group: 1 };
+                this.showParts(particle);
             }
         }
         
-        setTimeout(() => this.snowFall(), 100);
+        setTimeout(() => this.eventSnowFall(), 100);
     }
 
     eventHandleSnowfall() {
@@ -141,7 +145,6 @@ export default class Game1 extends Game {
                         });
                     }
                 }
-
                 // add random x movement to particles and set its y speed according to snow intensity
                 this.setGravity(part, wind + (randomAdd / 5000), (this.valueButtons.snowIntensity + 5) / 100, true);
             }
@@ -153,8 +156,8 @@ export default class Game1 extends Game {
     bindEvents() {
         this.eventDetectMousePress();
         this.eventSaveMousePosition();
-        this.eventHandleSnowfall();
 
-        this.snowFall();
+        this.eventSnowFall();
+        this.eventHandleSnowfall();
     }
 }

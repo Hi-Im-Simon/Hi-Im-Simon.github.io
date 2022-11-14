@@ -36,6 +36,7 @@ const Game = (props) => {
 						onClick={ () => {
 							startGame();
 							setBoolButtons({ ...Game._boolButtonsDefault });
+							setValueButtons({ ...Game._valueButtonsDefault });
 						}}
 					>reset</button>
 
@@ -70,8 +71,12 @@ const Game = (props) => {
 							<input type='range'
 							 	key={ key }
 								className={ `${ key } value range` }
-								min='-1' max='1' defaultValue={ Game.valueButtons[key] } step='0.01'
-								onInput={ (e) => { Game.valueButtons[key] = parseFloat(e.target.value) } }
+								min='-1' max='1' step='0.01'
+								value={ Game.valueButtons[key] }
+								onInput={ (e) => { 
+									Game.valueButtons[key] = parseFloat(e.target.value);
+									setValueButtons({ ...valueButtons, [key]: Game.valueButtons[key] });
+								}}
 							>
 								{/* { key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() } */}
 							</input>
