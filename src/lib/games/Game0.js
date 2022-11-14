@@ -104,7 +104,7 @@ export default class Game0 extends Game {
             if (phase === 5) if (--r <= 3) phase = 0;
         }
 
-        setTimeout(() => this.addMouseEffect(r, g, b, phase), 10);
+        setTimeout(() => this.addMouseEffect(r, g, b, phase), 25);
     }
 
     bindEvents() {

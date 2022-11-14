@@ -103,7 +103,7 @@ export default class Game {
                 }
             });
             Matter.Body.scale(part, scale * this.sr, scale * this.sr);
-            this.setGravity(part, 0, 0.5);
+            this.setGravity(part, 0, 0.2);
             this.showParts(part);
             return part;
         }
@@ -113,41 +113,43 @@ export default class Game {
         // create visible elements
         Matter.World.add(this.Engine.world, parts);
 
-        if (Array.isArray(parts)) {
-            for (let part of parts) {
-                this.parts.push(part);
-            }
-        }
-        else {
-            this.parts.push(parts);
+        if (!Array.isArray(parts)) parts = [parts];
+
+        for (let part of parts) {
+            this.parts.push(part);
         }
     }
 
-    removeParts(parts) {
+    removeParts(parts) {        
         // remove elements
+        if (!Array.isArray(parts)) parts = [parts];
+
         Matter.World.remove(this.Engine.world, parts);
-        if (parts.isArray) {
-            for (let part of parts) {
-                const i = this.parts.indexOf(part);
-                this.parts.splice(i, 1);
+
+        for (let part of parts) {
+            for (let i = 0; i < this.parts.length; i++) {
+                if (this.parts[i].id === part.id) {
+                    this.parts.splice(i, 1);
+                    break;
+                }
             }
-        }
-        else {
-            const i = this.parts.indexOf(parts);
-            this.parts.splice(i, 1);
         }
     }
 
     eventSaveMousePosition() {
         // save current mouse position on mouse move
-        this.element.onmousemove = (event) => {
+        this.element.getElementsByTagName('canvas')[0].onmousemove = (event) => {
             const rect = event.target.getBoundingClientRect();
             let x = (event.clientX - rect.left) * (925 / rect.height) * this.sr; //x position within the element
             let y = (event.clientY - rect.top) * (925 / rect.height) * this.sr;  //y position within the element
             this.mousePosition = [x, y];
         };
 
-        this.element.onmouseleave = (event) => {
+        this.element.onmouseleave = () => {
+            this.mousePosition = false;
+        };
+
+        this.element.getElementsByClassName('menu')[0].onmousemove = () => {
             this.mousePosition = false;
         };
     }
