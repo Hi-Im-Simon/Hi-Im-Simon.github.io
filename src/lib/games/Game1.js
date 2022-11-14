@@ -53,6 +53,7 @@ export default class Game1 extends Game {
                 setTimeout(() => this.removeParts(particle), 250);
                 particle.dontJoinOnTouch = true;
             }
+
             this.showParts(particle);
         }
 
@@ -65,24 +66,21 @@ export default class Game1 extends Game {
             for (let element1 of this.parts) {
                 if (element1.dontJoinOnTouch) continue;
                 if (element0 !== element1) {
-                    // if (Matter.Collision.collides(element0, element1) != null) {
-                    //     // Matter.Body.setParts(element0, [element0, element1]);
-                    //     let newElement = Matter.Body.create({
-                    //         parts: [
-                    //             ...element0.parts,
-                    //             ...element1.parts,
-                    //         ],
-                    //         render: {
-                    //             fillStyle: this.particleColor,
-                    //         }
-                    //     });
+                    if (Matter.Collision.collides(element0, element1) != null) {
+                        // Matter.Body.setParts(element0, [element0, element1]);
+                        let newElement = Matter.Composite.create({
+                            parts: [
+                                ...element0.parts,
+                                ...element1.parts,
+                            ],
+                            render: {
+                                fillStyle: this.particleColor,
+                            }
+                        });
+                        newElement.dontJoinOnTouch = true;
                         
-                    //     this.removeParts(element0);
-                    //     this.removeParts(element1);
-                    //     this.showParts(newElement);
-                    // }
-                    Matter.Body.setParts(element0, [...element0.parts, element1]);
-                    this.removeParts(element0);
+                        this.showParts(newElement);
+                    }
                 }
             }
         }
@@ -93,6 +91,6 @@ export default class Game1 extends Game {
     bindEvents() {
         this.eventDetectMousePress();
         this.eventSaveMousePosition();
-        this.mergeColliding();
+        // this.mergeColliding();
     }
 }
