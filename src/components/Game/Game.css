@@ -29,6 +29,10 @@
     cursor: pointer;
 }
 
+/* make buttons on the right expand to their left */
+.menu#game-right .buttons { direction: rtl }
+.menu#game-right .buttons > * { direction: rtl }
+
 button {
     position: relative;
     height: 50px;
@@ -36,6 +40,11 @@ button {
     font-size: 110%;
     border-radius: 5px;
     cursor: pointer;
+    direction: rtl;
+}
+
+input.range {
+    direction: ltr !important;
 }
 
 button:hover {

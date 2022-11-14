@@ -10,7 +10,7 @@ export default class Game0 extends Game {
         super(element);
         this.firstRender = firstRender;
         this.mousePosition = false;
-        this.isPressed = { left: false };
+        this.isPressed = {};
 
         // default values of button states, DON'T CHANGE IN CODE
         this._boolButtonsDefault = {
@@ -67,9 +67,9 @@ export default class Game0 extends Game {
         let otherParts = [
             
         ];
-        for (let part of otherParts) {
-            part.restitution = 0.25;
-        }
+        // for (let part of otherParts) {
+        //     part.restitution = 0.25;
+        // }
 
         this.showParts([...this._createWalls(), ...otherParts]);
     }

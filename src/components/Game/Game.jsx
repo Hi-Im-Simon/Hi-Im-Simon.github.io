@@ -6,6 +6,7 @@ import * as Games from '../../lib//games/gamesIndex';
 const Game = (props) => {
 	const [Game, setGame] = useState(false);
 	const [boolButtons, setBoolButtons] = useState({});
+	const [valueButtons, setValueButtons] = useState({});
 	const [isMenu, setIsMenu] = useState(false);
 
 	function startGame(firstRender=false) {
@@ -26,7 +27,7 @@ const Game = (props) => {
 			className='Game' 
 			id={ props.id }
 		>
-			<div className='menu' style={ props.id === 'game-left' ? { left: 0 } : { right: 0 } }>
+			<div className='menu' id={ props.id } style={ props.id === 'game-left' ? { left: 0 } : { right: 0 } }>
 				<div className='menu-toggle noselect' onClick={ () => setIsMenu(!isMenu) }>{ isMenu ? '/\\' : '\\/' }</div>
 
 				<div className='buttons' style={ isMenu ? { display: 'block' } : { display: 'none' } }>
@@ -61,6 +62,19 @@ const Game = (props) => {
 							>
 								{ key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() }
 							</button>
+						)
+					}
+
+					{ Game.valueButtons &&
+						Object.keys(Game.valueButtons).map(key => 
+							<input type='range'
+							 	key={ key }
+								className={ `${ key } value range` }
+								min='-1' max='1' defaultValue={ Game.valueButtons[key] } step='0.01'
+								onInput={ (e) => { Game.valueButtons[key] = parseFloat(e.target.value) } }
+							>
+								{/* { key.replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase() } */}
+							</input>
 						)
 					}
 				</div>

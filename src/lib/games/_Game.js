@@ -25,6 +25,7 @@ export default class Game {
 
         this.boolButtons = {};
         this.functionalButtons = {};
+        this.valueButtons = {};
         this.parts = [];
         
         this.Engine.world.gravity.y = 0.1 * this.sr;
@@ -41,9 +42,9 @@ export default class Game {
             Matter.Bodies.rectangle(this.cw + 500, this.ch * 50, 1000, this.ch * 100, { isStatic: true }),   // right
         ];
 
-        for (let wall of walls) {
-            wall.dontJoinOnTouch = true;
-        }
+        // for (let wall of walls) {
+        //     wall.dontJoinOnTouch = true;
+        // }
 
         return walls;
     }
