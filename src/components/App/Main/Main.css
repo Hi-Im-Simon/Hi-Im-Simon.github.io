@@ -1,7 +1,8 @@
 .Main {
+    background: #0d1117;
     color: white;
     height: 100vh;
-    padding: 0 50px;
+    padding: 50px 50px;
     flex: 1;
     overflow-y: auto;
     box-sizing: border-box;

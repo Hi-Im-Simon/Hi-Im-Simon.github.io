@@ -1,5 +1,5 @@
-import React, {  } from 'react';
 import './App.css';
+import React, { } from 'react';
 import Main from './Main/Main';
 import Game from '../Game/Game';
 
