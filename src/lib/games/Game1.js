@@ -112,7 +112,6 @@ export default class Game1 extends Game {
     // }
 
     eventSnowFall() {
-        console.log(this.parts.length)
         if (this.parts.length < 5000) {
             let intensity = (this.valueButtons.snowIntensity + 1);
 
