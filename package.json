@@ -19,9 +19,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.0.0",
     "babel-plugin-import-directory": "^1.1.0",
     "babel-plugin-wildcard": "^7.0.0",
     "gh-pages": "^4.0.0"

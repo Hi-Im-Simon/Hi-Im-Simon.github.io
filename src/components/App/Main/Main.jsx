@@ -8,8 +8,6 @@ const Main = (props) => {
 	return (
 		<div className='Main'>
 			<Github />
-			<h1>{ val }</h1>
-			<input type="text" onChange={(e) => setVal(e.target.value)} />
 		</div>
 	);
 };
