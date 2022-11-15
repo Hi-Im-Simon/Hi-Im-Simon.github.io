@@ -7,7 +7,6 @@ export default class Game1 extends Game {
         this.mousePosition = false;
         this.isPressed = { left: false };
 
-        this.particles = [];
         this.snowColor = 'white';
         this.snowLevel = 0;
 
@@ -113,20 +112,23 @@ export default class Game1 extends Game {
     // }
 
     eventSnowFall() {
-        let intensity = (this.valueButtons.snowIntensity + 1);
+        console.log(this.parts.length)
+        if (this.parts.length < 5000) {
+            let intensity = (this.valueButtons.snowIntensity + 1);
 
-        for (let x = 0; x < this.cw / 10; x++) {
-            if (intensity / 2 >= Math.random()) {
-                let rand = Math.random();
-                const particle = Matter.Bodies.circle(x * 10, (-100 + (rand * 20)) * this.sr, (rand + 0.5) * this.sr, {
-                    render: {
-                        fillStyle: this.snowColor,
-                    }
-                });
+            for (let x = 0; x < this.cw / 10; x++) {
+                if (intensity / 2 >= Math.random()) {
+                    let rand = Math.random();
+                    const particle = Matter.Bodies.circle(x * 10, (-100 + (rand * 20)) * this.sr, (rand + 0.5) * this.sr, {
+                        render: {
+                            fillStyle: this.snowColor,
+                        }
+                    });
 
-                particle.isParticle = true;
-                particle.collisionFilter = { group: 1 };
-                this.showParts(particle);
+                    particle.isParticle = true;
+                    particle.collisionFilter = { group: 1 };
+                    this.showParts(particle);
+                }
             }
         }
         
