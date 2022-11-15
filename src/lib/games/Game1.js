@@ -103,36 +103,6 @@ export default class Game1 extends Game {
         setTimeout(() => this.addMouseEffect(), 100);
     }
 
-    
-
-    // mergeColliding() {
-    //     for (let element0 of this.parts) {
-    //         if (element0.dontJoinOnTouch) continue;
-    //         for (let element1 of this.parts) {
-    //             if (element1.dontJoinOnTouch) continue;
-    //             if (element0 !== element1) {
-    //                 if (Matter.Collision.collides(element0, element1) != null) {
-    //                     // Matter.Body.setParts(element0, [element0, element1]);
-    //                     let newElement = Matter.Composite.create({
-    //                         parts: [
-    //                             ...element0.parts,
-    //                             ...element1.parts,
-    //                         ],
-    //                         render: {
-    //                             fillStyle: this.particleColor,
-    //                         }
-    //                     });
-    //                     newElement.dontJoinOnTouch = true;
-                        
-    //                     this.showParts(newElement);
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     setTimeout(() => this.mergeColliding(), 100);
-    // }
-
     eventSnowFall() {
         if (this.parts.length < 5000) {
             let intensity = (this.valueButtons.snowIntensity + 1);
@@ -145,9 +115,9 @@ export default class Game1 extends Game {
                             fillStyle: this.snowColor,
                         }
                     });
-
+                    
                     particle.isParticle = true;
-                    particle.collisionFilter = { group: 1 };
+                    particle.collisionFilter = (rand > 0.8) ? { group: 1 } : { group: -1 };
                     this.showParts(particle);
                 }
             }
