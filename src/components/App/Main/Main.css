@@ -2,14 +2,20 @@
     position: relative;
     color: white;
     height: 100vh;
-    padding: 50px 50px;
+    padding: 0 50px;
     flex: 1;
     overflow-y: auto;
     box-sizing: border-box;
 }
 
-.top {
+.Main > .top {
     display: flex;
+    height: 100vh;
+    min-height: 800px;
+}
+
+.Main > .content {
+    height: 200vh;
 }
 
 /* width */

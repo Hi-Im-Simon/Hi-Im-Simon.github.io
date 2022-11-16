@@ -16,7 +16,7 @@ const Github = (props) => {
 
 			<div className='section'>
 				<span className='name block'>{ userData.name }</span>
-				<a href={ userData.html_url } target='new'><span className='login block'>{ userData.login }</span></a>
+				<span className='login block'><a href={ userData.html_url } target='new'>{ userData.login }</a></span>
 			</div>
 
 			<div className='section'>

@@ -61,14 +61,14 @@ export default class Game1 extends Game {
         let houseHeight = 100 * this.sr;
         let partSize = 10 * this.sr;
         let otherParts = [
-            Matter.Bodies.rectangle(houseX, this.ch - (partSize * 2), this.cw, partSize * 4, { isBackground: true, color: 'green' }), // ground background
+            // Matter.Bodies.rectangle(houseX, this.ch - (partSize * 2), this.cw, partSize * 4, { isBackground: true, color: 'green' }), // ground background
             this.snow, // append snow here to display it over background
-            Matter.Bodies.rectangle(houseX, houseY - (houseHeight / 2), houseWidth, houseHeight, { isBackground: true, color: '#db944b' }), // main background
-            Matter.Bodies.rectangle(houseX, houseY - (partSize / 2), houseWidth, partSize, { color: '#7a532a' }), // floor
-            Matter.Bodies.rectangle(houseX - (houseWidth / 2), houseY - (houseHeight / 2), partSize, houseHeight, { color: '#7a532a' }), // left wall
-            Matter.Bodies.rectangle(houseX + (houseWidth / 2), houseY - (houseHeight / 2), partSize, houseHeight, { color: '#7a532a' }), // right wall
-            Matter.Bodies.rectangle(houseX - (houseWidth / 4), houseY - houseHeight - (50 * this.sr), houseWidth / 1.35, partSize, { rotate: -Math.PI / 4, color: '#e55858' }), // left roof
-            Matter.Bodies.rectangle(houseX + (houseWidth / 4), houseY - houseHeight - (50 * this.sr), houseWidth / 1.35, partSize, { rotate: Math.PI / 4, color: '#e55858' }), // right roof
+            // Matter.Bodies.rectangle(houseX, houseY - (houseHeight / 2), houseWidth, houseHeight, { isBackground: true, color: '#db944b' }), // main background
+            // Matter.Bodies.rectangle(houseX, houseY - (partSize / 2), houseWidth, partSize, { color: '#7a532a' }), // floor
+            // Matter.Bodies.rectangle(houseX - (houseWidth / 2), houseY - (houseHeight / 2), partSize, houseHeight, { color: '#7a532a' }), // left wall
+            // Matter.Bodies.rectangle(houseX + (houseWidth / 2), houseY - (houseHeight / 2), partSize, houseHeight, { color: '#7a532a' }), // right wall
+            // Matter.Bodies.rectangle(houseX - (houseWidth / 4), houseY - houseHeight - (50 * this.sr), houseWidth / 1.35, partSize, { rotate: -Math.PI / 4, color: '#e55858' }), // left roof
+            // Matter.Bodies.rectangle(houseX + (houseWidth / 4), houseY - houseHeight - (50 * this.sr), houseWidth / 1.35, partSize, { rotate: Math.PI / 4, color: '#e55858' }), // right roof
         ];
 
         for (let part of otherParts) {

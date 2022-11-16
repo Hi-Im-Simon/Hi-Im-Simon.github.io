@@ -1,15 +1,5 @@
 .App {
     background: #0d1117;
     display: flex;
-}
-
-@media (max-width: 1500px) 
-or 
-(max-height: 400px) {
-    #game-right {
-        display: none;
-    }
-    #game-left {
-        display: none;
-    }
+    scroll-behavior: smooth;
 }
