@@ -1,0 +1,15 @@
+.Images {
+    position: absolute;
+    width: calc(50% - 190px);
+    overflow: hidden;
+}
+
+.Images.languages {
+    left: 20px;
+}
+
+.Images.frameworks {
+    right: 20px;
+}
+
+img { width: 50%; }
