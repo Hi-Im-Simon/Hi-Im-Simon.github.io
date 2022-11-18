@@ -11,7 +11,7 @@
     top: 0;
     animation: slideInAnimationLeft ease 1s;
     opacity: 0.8;
-    box-shadow: 0px 20px 20px black;
+    box-shadow: 0px 0px 50px black;
 }
 
 .Game#game-right {
@@ -41,10 +41,12 @@
 .Game .menu#game-right .buttons > * { direction: rtl }
 
 .Game button {
+    color: black;
     position: relative;
     height: 50px;
     width: 100%;
-    font-size: 110%;
+    font-size: 100%;
+    font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
     direction: rtl;

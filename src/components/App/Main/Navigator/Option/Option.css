@@ -1,7 +1,7 @@
 .Option {
     font-size: 20px;
-    width: 45%;
-    min-width: 125px;
+    width: 19%;
+    min-width: 130px;
     max-width: 200px;
     height: 50px;
     border-radius: 10px;
@@ -9,17 +9,26 @@
     box-sizing: border-box;
     background: #0d1117;
     box-shadow: 0px 5px 5px #0d1117;
-    color: #e4e9ee;
     cursor: pointer;
-    transition: all .1s ease;
+    transition: all .2s ease;
 }
 
 .Option:hover {
     font-size: 24px;
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 800px) {
     .Option:hover {
         height: 60px;
+        margin-bottom: -70px;
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 800px) {
+    .Option {
+        width: calc(50% - 1px);
+        max-width: none;
+        height: 30px;
     }
 }

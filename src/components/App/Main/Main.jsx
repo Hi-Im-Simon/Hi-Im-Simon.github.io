@@ -48,13 +48,16 @@ const Main = (props) => {
 		<div className='Main'>
 			<Navigator />
 
-			<div id='top'>
+			<div id='about-me'>
 				<Images id='languages' />
 				<Github />
 				<Images id='frameworks' />
 			</div>
 
-			<div id="about-me"></div>
+			<div id="education">TBD</div>
+			<div id="experience">TBD</div>
+			<div id="projects">TBD</div>
+			<div id="knowledge">TBD</div>
 		</div>
 	);
 };

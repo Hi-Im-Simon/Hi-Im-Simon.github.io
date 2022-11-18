@@ -7,17 +7,24 @@
     box-sizing: border-box;
 }
 
-.Main > #top {
-    display: flex;
+.Main > * {
+    scroll-margin-top: 100px;
+}
+
+.Main > #about-me {
+    padding: 10% 0 50px;
     height: 100vh;
     min-height: 800px;
 }
 
-.Main > #about-me {
-    height: 200vh;
+.Main > #education,
+.Main > #experience,
+.Main > #projects,
+.Main > #knowledge {
+    padding: 50px 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .Main {
         padding: 0 25px;
     }
