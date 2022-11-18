@@ -31,8 +31,8 @@ export default class Game0 extends Game {
 
     showTitle() {
         let letters = [
-            ['H', '#58a6ff'], ['i', '#58a6ff'], ['-', 'white'],
-            ['I', '#58a6ff'], ['m', '#58a6ff'], ['-', 'white'],
+            ['H', '#58a6ff'], ['i', '#58a6ff'],
+            ['I', 'white'], ['m', 'white'],
             ['S', 'orange'], ['i', 'orange'], ['m', 'orange'], ['o', 'orange'], ['n', 'orange'],
         ];
 

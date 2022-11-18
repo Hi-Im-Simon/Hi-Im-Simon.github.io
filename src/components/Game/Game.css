@@ -1,14 +1,20 @@
 .Game {
     position: relative;
     background: black;
-    border: 2px solid gray;
+    border: 2px solid rgb(14, 14, 14);
     box-sizing: border-box;
     height: 100vh;
-    width: 50vh;
+    width: 40vh;
     max-height: 929px;
     max-width: 419.5px;
     flex: 0 0 auto;
     top: 0;
+    animation: slideInAnimationLeft ease 1s;
+    opacity: 0.8;
+}
+
+.Game#game-right {
+    animation: slideInAnimationRight ease 1s;
 }
 
 .Game canvas {
@@ -16,12 +22,12 @@
     width: 100%;
 }
 
-.menu {
+.Game .menu {
     position: absolute;
     width: 80px;
 }
 
-.menu-toggle {
+.Game .menu-toggle {
     width: 50%;
     padding: 25%;
     text-align: center;
@@ -30,10 +36,10 @@
 }
 
 /* make buttons on the right expand to their left */
-.menu#game-right .buttons { direction: rtl }
-.menu#game-right .buttons > * { direction: rtl }
+.Game .menu#game-right .buttons { direction: rtl }
+.Game .menu#game-right .buttons > * { direction: rtl }
 
-button {
+.Game button {
     position: relative;
     height: 50px;
     width: 100%;
@@ -43,39 +49,45 @@ button {
     direction: rtl;
 }
 
-input.range {
+.Game input.range {
     direction: ltr !important;
 }
 
-button:hover {
+.Game button:hover {
     opacity: 0.9;
 }
 
-button.reset {
+.Game button.reset {
     background: #74bef3;
 }
 
-button:hover {
+.Game button:hover {
     width: 200%;
 }
 
-/* move to global later */
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+@keyframes slideInAnimationLeft {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInAnimationRight {
+    0% {
+        transform: translateX(50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 1600px) or (max-height: 400px) {
-    #game-right {
-        display: none;
-    }
-
+    #game-right,
     #game-left {
-        display: none;
+        position: absolute;
+        opacity: 0;
     }
 }

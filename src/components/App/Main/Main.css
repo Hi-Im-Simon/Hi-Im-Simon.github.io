@@ -20,13 +20,13 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 2px;
     background: #0d1117;
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb {
-    border: 3px solid #0d1117;
+    border: 0px solid #0d1117;
     background-clip: padding-box;
 }
 
@@ -37,11 +37,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 20px;
+    background: rgb(52, 52, 52);
+    border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #888;
+    background: rgb(70, 70, 70);
 }
