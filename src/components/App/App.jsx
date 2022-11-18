@@ -6,11 +6,14 @@ import Game from '../Game/Game';
 const App = (props) => {
 	return (
 		<div className='App'>
-			<Game id='game-left' gameName={ 'Game0' } />
+			{ window.screen.width >= 1600 &&
+				<Game id='game-left' gameName={ 'Game0' } />
+			}
 
 			<Main />
-
-			<Game id='game-right' gameName={ 'Game1' } />
+			{ window.screen.width >= 1600 &&
+				<Game id='game-right' gameName={ 'Game1' } />
+			}
 		</div>
 	);
 };

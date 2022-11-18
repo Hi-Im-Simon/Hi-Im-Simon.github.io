@@ -17,3 +17,7 @@ code {
     sans-serif;
   color: #e4e9ee;
 }
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
