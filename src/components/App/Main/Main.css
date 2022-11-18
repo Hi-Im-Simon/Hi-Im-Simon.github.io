@@ -1,6 +1,5 @@
 .Main {
     position: relative;
-    color: white;
     height: 100vh;
     padding: 0 50px;
     flex: 1;
@@ -8,14 +7,20 @@
     box-sizing: border-box;
 }
 
-.Main > .top {
+.Main > #top {
     display: flex;
     height: 100vh;
     min-height: 800px;
 }
 
-.Main > .content {
+.Main > #about-me {
     height: 200vh;
+}
+
+@media (max-width: 500px) {
+    .Main {
+        padding: 0 25px;
+    }
 }
 
 /* width */

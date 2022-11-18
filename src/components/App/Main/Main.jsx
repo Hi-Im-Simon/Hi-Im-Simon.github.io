@@ -1,6 +1,7 @@
 import './Main.css';
 // import { useState, useEffect } from 'react';
 // import $ from 'jquery';
+import Navigator from './Navigator/Navigator';
 import Github from './Github/Github';
 import Images from './Images/Images';
 
@@ -45,13 +46,15 @@ const Main = (props) => {
 
 	return (
 		<div className='Main'>
-			<div className='top'>
+			<Navigator />
+
+			<div id='top'>
 				<Images id='languages' />
 				<Github />
 				<Images id='frameworks' />
 			</div>
 
-			<div className="content"></div>
+			<div id="about-me"></div>
 		</div>
 	);
 };

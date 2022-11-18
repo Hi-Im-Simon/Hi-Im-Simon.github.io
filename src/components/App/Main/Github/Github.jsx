@@ -10,9 +10,7 @@ let userData = await fetch(`https://api.github.com/users/${ userName }`)
 const Github = (props) => {
 	return (
 		<div className='Github center'>
-			<a href={ userData.html_url } target="new">
-				<img className='profile-picture' src={ userData.avatar_url } alt="Myself" />
-			</a>
+			<a href={userData.html_url} target="new"><img className='profile-picture' src={userData.avatar_url} alt="Myself" /></a>
 
 			<div className='section'>
 				<span className='name block'>{ userData.name }</span>
