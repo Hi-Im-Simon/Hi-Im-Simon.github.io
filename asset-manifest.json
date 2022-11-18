@@ -1,13 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d0302d3.css",
-    "main.js": "/static/js/main.0ee5396c.js",
+    "main.css": "/static/css/main.5b53a133.css",
+    "main.js": "/static/js/main.c9ecce7e.js",
+    "static/media/5kotlin.png": "/static/media/5kotlin.0e22a842339118ef9a10.png",
+    "static/media/0react.png": "/static/media/0react.8a6fc0a24a800d1e0f4a.png",
+    "static/media/6dotnet.png": "/static/media/6dotnet.4889519c4b8cdad29341.png",
+    "static/media/5cpp.png": "/static/media/5cpp.5185ce2f4c945505ee4f.png",
+    "static/media/4flask.png": "/static/media/4flask.42288b18a6a5ec721c0f.png",
+    "static/media/6lua.png": "/static/media/6lua.8a7d9cb71e7790b07405.png",
+    "static/media/2html.png": "/static/media/2html.8c1d0ebc62aad531f327.png",
+    "static/media/2linux.png": "/static/media/2linux.9bc1f6158870f6a96095.png",
+    "static/media/0python.png": "/static/media/0python.60aa0e91695c91710b00.png",
+    "static/media/3css.png": "/static/media/3css.393b7be9ff05bb7b676a.png",
+    "static/media/4c.png": "/static/media/4c.bbbbbabc8c191bfb99bf.png",
+    "static/media/1django.png": "/static/media/1django.af02f0452718520e9484.png",
+    "static/media/1js.png": "/static/media/1js.c25e741f3c2d3cc33f08.png",
+    "static/media/3sql.png": "/static/media/3sql.934b5a16397ffe001902.png",
     "index.html": "/index.html",
-    "main.8d0302d3.css.map": "/static/css/main.8d0302d3.css.map",
-    "main.0ee5396c.js.map": "/static/js/main.0ee5396c.js.map"
+    "main.5b53a133.css.map": "/static/css/main.5b53a133.css.map",
+    "main.c9ecce7e.js.map": "/static/js/main.c9ecce7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8d0302d3.css",
-    "static/js/main.0ee5396c.js"
+    "static/css/main.5b53a133.css",
+    "static/js/main.c9ecce7e.js"
   ]
 }
