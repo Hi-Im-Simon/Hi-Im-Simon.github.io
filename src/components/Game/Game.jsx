@@ -16,7 +16,6 @@ const Game = (props) => {
 	}
 
 	useEffect(() => {
-		console.log(window.screen.width)
 		// if game is not yet rendered, render it
 		startGame(true);
 		// disable warnings about argument passing in case any are needed in the future
