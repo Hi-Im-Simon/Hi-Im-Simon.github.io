@@ -11,6 +11,7 @@
     top: 0;
     animation: slideInAnimationLeft ease 1s;
     opacity: 0.8;
+    box-shadow: 0px 20px 20px black;
 }
 
 .Game#game-right {

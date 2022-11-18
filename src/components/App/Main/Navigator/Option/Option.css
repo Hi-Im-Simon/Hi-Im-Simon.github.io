@@ -3,7 +3,7 @@
     width: 45%;
     min-width: 125px;
     max-width: 200px;
-    height: 35px;
+    height: 50px;
     border-radius: 10px;
     border: 1px solid #343434;
     box-sizing: border-box;
@@ -20,7 +20,6 @@
 
 @media (min-width: 1800px) {
     .Option:hover {
-        height: 50px;
-        margin-bottom: -60px;
+        height: 60px;
     }
 }

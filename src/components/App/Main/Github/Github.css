@@ -29,6 +29,7 @@
 .Github .profile-picture {
     border-radius: 50%;
     border: 1px solid #30363d;
+    box-sizing: border-box;
     width: 100%;
 }
 
