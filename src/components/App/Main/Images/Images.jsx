@@ -17,7 +17,7 @@ const Images = (props) => {
 	useEffect(() => {
 		const element = document.getElementsByClassName(props.id)[0].children;
 		for (let i = 0; i < element.length; i++) {
-			setTimeout(() => element[i].classList.add('show'), 250 * i);
+			setTimeout(() => element[i].classList.add('show-img'), 250 * i);
 		}
 	}, [props.id]);
 
