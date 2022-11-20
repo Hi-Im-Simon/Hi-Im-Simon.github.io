@@ -1,19 +1,20 @@
 .Game {
     position: relative;
     background: black;
-    border: 2px solid rgb(14, 14, 14);
     box-sizing: border-box;
     height: 100vh;
     width: 40vh;
-    max-height: 957px;
+    max-height: 961px;
     max-width: 419.5px;
     flex: 0 0 auto;
     top: 0;
-    animation: slideInAnimationLeft ease 1s;
     opacity: 0.8;
-    box-shadow: 0px 0px 50px black;
+    /* box-shadow: 25px 0px 40px black; */
 }
 
+.Game#game-left {
+    animation: slideInAnimationLeft ease 1s;
+}
 .Game#game-right {
     animation: slideInAnimationRight ease 1s;
 }
@@ -46,7 +47,6 @@
     height: 50px;
     width: 100%;
     font-size: 100%;
-    font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
     direction: rtl;

@@ -11,6 +11,7 @@ const App = (props) => {
 			}
 
 			<Main />
+			
 			{ window.screen.width >= 1600 &&
 				<Game id='game-right' gameName={ 'Game1' } />
 			}

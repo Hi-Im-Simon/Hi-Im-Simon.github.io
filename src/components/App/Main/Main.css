@@ -1,20 +1,23 @@
 .Main {
+    z-index: 10;
     position: relative;
     height: 100vh;
     padding: 0 50px;
     flex: 1;
     overflow-y: auto;
     box-sizing: border-box;
+    box-shadow: 0 0 5px 5px #0d1117;
 }
 
 .Main > * {
     scroll-margin-top: 100px;
+    box-sizing: border-box;
 }
 
 .Main > #about-me {
-    padding: 10% 0 50px;
-    height: 100vh;
-    min-height: 800px;
+    padding: 150px 0 50px;
+    height: calc(100vh + 100px); /* cac +100px to make up for the nav bar */
+    min-height: 700px;
 }
 
 .Main > #education,
@@ -22,7 +25,6 @@
 .Main > #projects,
 .Main > #knowledge {
     padding: 50px 0;
-    height: 90vh;
 }
 
 @media (max-width: 800px) {
