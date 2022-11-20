@@ -10,7 +10,7 @@
 }
 
 .Main > * {
-    scroll-margin-top: 50px;
+    scroll-margin-top: 100px;
     box-sizing: border-box;
 }
 
@@ -29,14 +29,30 @@
     margin: 100px 0;
 }
 
+.Main > #education,
+.Main > #experience,
+.Main > #projects,
+.Main > #knowledge {
+    font-size: 2rem;
+}
+
+.Main .hidden:nth-child(1) {
+    transition-delay: 0s;
+}
 .Main .hidden:nth-child(2) {
-    transition-delay: 0.2s;
+    transition-delay: 1s;
 }
 .Main .hidden:nth-child(3) {
-    transition-delay: 0.4s;
+    transition-delay: 2s;
 }
 .Main .hidden:nth-child(4) {
-    transition-delay: 0.6s;
+    transition-delay: 3s;
+}
+.Main .hidden:nth-child(5) {
+    transition-delay: 4s;
+}
+.Main .hidden:nth-child(6) {
+    transition-delay: 5s;
 }
 
 @media (max-width: 800px) {
@@ -71,4 +87,5 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(70, 70, 70);
+    border-radius: 2px;
 }

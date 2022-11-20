@@ -10,7 +10,7 @@ const Main = (props) => {
 
 	useEffect(() => {
 		const observer = new IntersectionObserver((els) => {
-			els.forEach((el) => {
+			els.forEach(el => {
 				if (el.isIntersecting) {
 					el.target.classList.add('show');
 				} else {
@@ -42,9 +42,7 @@ const Main = (props) => {
 					<p className='hidden'>Current</p>
 					<p className='hidden'>Poznań University of Technology</p>
 					<p className='hidden'>[2020-TBA] - Computer Science degree (full-time)</p>
-				</div>
-
-				<div>
+					
 					<p className='hidden'>Completed</p>
 					<p className='hidden'>“Bohaterów Monte Cassino” Technical school in Września</p>
 					<p className='hidden'>[2016-2020] - IT specialist technical degree</p>
@@ -57,9 +55,7 @@ const Main = (props) => {
 				<div>
 					<p className='hidden'>IT specialist and Web developer</p>
 					<p className='hidden'>2021 – CBiRNT Września</p>
-				</div>
 
-				<div>
 					<p className='hidden'>IT specialist</p>
 					<p className='hidden'>2019 – Urząd Miasta i Gminy Miłosław</p>
 				</div>
