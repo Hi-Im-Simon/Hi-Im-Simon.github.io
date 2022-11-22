@@ -16,7 +16,7 @@
 
 .Main > #about-me {
     height: 100vh;
-    min-height: 700px;
+    max-height: 961px; /* remove if more content is added to about-me */
     margin-top: 0 !important;
     padding-top: 100px;
 }
