@@ -40,19 +40,19 @@
     transition-delay: 0s;
 }
 .Main .hidden:nth-child(2) {
-    transition-delay: 1s;
+    transition-delay: 0.5s;
 }
 .Main .hidden:nth-child(3) {
-    transition-delay: 2s;
+    transition-delay: 1s;
 }
 .Main .hidden:nth-child(4) {
-    transition-delay: 3s;
+    transition-delay: 1.5s;
 }
 .Main .hidden:nth-child(5) {
-    transition-delay: 4s;
+    transition-delay: 2s;
 }
 .Main .hidden:nth-child(6) {
-    transition-delay: 5s;
+    transition-delay: 2.5s;
 }
 
 @media (max-width: 800px) {
