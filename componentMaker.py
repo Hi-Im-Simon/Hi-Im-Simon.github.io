@@ -4,14 +4,12 @@ if len(sys.argv) != 2:
     print('Invalid argument')
 else:
     name = sys.argv[1].capitalize()
-    dir_path = f'src/components/{ name }'
-    jsx_path = dir_path + f'/{ name }.jsx'
-    css_path = dir_path + f'/{ name }.css'
-    os.makedirs(dir_path, exist_ok=False)
+    jsx_path = f'src/components/{ name }.tsx'
+    css_path = f'src/styles/{ name }.css'
     
     jsx_file = open(jsx_path, 'w+')
     jsx_file.write(
-f"""import './{ name }.css';
+f"""import '../styles/{ name }.css';
 
 const { name } = (props) => {{
 	return (

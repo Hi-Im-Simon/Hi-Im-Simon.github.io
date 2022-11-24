@@ -1,0 +1,17 @@
+.IntroGame {
+    width: 400px;
+    height: 100%;
+    box-sizing: border-box;
+    border: 20px solid black;
+    background: wheat;
+    opacity: 0.2;
+
+    transition: all 2s;
+    transform: skew(6deg);
+}
+
+.IntroGame:hover {
+    opacity: 1;
+    z-index: 1;
+    transform: none;
+}

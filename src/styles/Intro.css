@@ -1,0 +1,24 @@
+.Intro {
+    width: 1920px;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.Intro .main-title {
+    position: absolute;
+    display: grid;
+    align-content: center;
+    min-height: 100vh;
+
+    transition: all 2s;
+    z-index: -10;
+}
+
+.Intro .main-title:hover {
+    opacity: 0;
+}
