@@ -1,4 +1,4 @@
-### My website
+# My website
 
-# Technologies
+### Technologies
 - React.js
