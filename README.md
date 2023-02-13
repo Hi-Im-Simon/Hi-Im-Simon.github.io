@@ -2,3 +2,4 @@
 
 ### Technologies
 - React.js
+- TypeScript
