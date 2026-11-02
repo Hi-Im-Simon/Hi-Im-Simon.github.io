@@ -1,0 +1,303 @@
+{
+  "meta": {
+    "title": "Szymon Stanisławski Software & AI",
+    "description": "Portfolio Szymona Stanisławskiego. Dwa równorzędne obszary: programowanie oraz trenowanie AI, rate & review, rubryki i ewaluacja modeli."
+  },
+  "nav": {
+    "label": "Nawigacja główna",
+    "home": "Strona główna",
+    "skills": "Umiejętności",
+    "work": "Doświadczenie",
+    "about": "O mnie",
+    "contact": "Porozmawiajmy",
+    "menu": "Otwórz menu",
+    "close": "Zamknij menu",
+    "language": "Wybierz język",
+    "skip": "Przejdź do treści"
+  },
+  "hero": {
+    "eyebrow": "Szymon Stanisławski / Poznań, Polska",
+    "line1": "Piszę kod.",
+    "line2": "Trenuję AI.",
+    "description": "Na co dzień pracuję po obu stronach: buduję oprogramowanie i współtworzę proces trenowania AI. Aplikacje, rate & review, rubryki oceny, ewaluacja modeli. Dwie dziedziny, które coraz bardziej się przecinają.",
+    "cta": "Poznaj moje umiejętności",
+    "github": "Zobacz GitHub",
+    "evidence": "Zobacz w praktyce",
+    "intersection": "",
+    "software": {
+      "label": "Programowanie",
+      "title": "Programowanie",
+      "boardLine": "APLIKACJE / INTERFEJSY / SYSTEMY"
+    },
+    "ai": {
+      "label": "Trenowanie i ewaluacja AI",
+      "title": "Trenowanie i ewaluacja AI",
+      "boardLine": "TRENING / RATE & REVIEW / EWALUACJA",
+      "boardTitle": "człowiek → AI"
+    },
+    "boardNote": "...i ich połączenie",
+    "shuffle": "Przemieszaj trochę"
+  },
+  "skills": {
+    "eyebrow": "Umiejętności",
+    "title": "Programowanie i AI.\nŁączę jedno z drugim.",
+    "description": "Buduję aplikacje i pracuję przy trenowaniu modeli. Łączę te umiejętności, przygotowując zadania programistyczne dla AI i oceniając, jak modele radzą sobie z kodem.",
+    "software": {
+      "title": "Programowanie",
+      "description": "Współtworzę aplikacje, z których korzysta większość największych sieci handlowych w Polsce oraz wiele sieci w Europie.",
+      "items": [
+        "Lead developer biblioteki komponentów i utili stanowiącej rdzeń naszych aplikacji",
+        "Lead developer wtyczek do płatności kartami podarunkowymi dla sklepów e-commerce klientów",
+        "React, TypeScript, .NET, SQL i Python: od interfejsów po logikę i dane"
+      ],
+      "evidence": "Zajrzyj do pracy programistycznej"
+    },
+    "ai": {
+      "title": "Trenowanie i ewaluacja AI",
+      "description": "Pracuję przy trenowaniu AI i ocenie jakości projektów, danych oraz odpowiedzi, które wspierają ten proces.",
+      "items": [
+        "Projekty, prompty, cele i kontekst zadań programistycznych",
+        "Tworzenie rubryk, ewaluacja kodu i porównywanie modeli",
+        "Raporty oraz rate & review pracy innych osób"
+      ],
+      "evidence": "Zajrzyj do pracy z AI"
+    }
+  },
+  "work": {
+    "eyebrow": "Doświadczenie",
+    "title": "Nad czym pracuję",
+    "description": "Rozwijam aplikacje sieci handlowych, bibliotekę komponentów i wtyczki płatności. Równolegle pracuję przy trenowaniu i ewaluacji AI.",
+    "filtersLabel": "Filtruj doświadczenie",
+    "all": "Wszystko",
+    "software": "Programowanie",
+    "ai": "AI",
+    "details": "Zakres pracy",
+    "close": "Zamknij szczegóły",
+    "context": "Kontekst",
+    "contribution": "Mój wkład",
+    "stack": "Technologie i metody",
+    "source": "Kod źródłowy",
+    "demo": "Strona projektu",
+    "commercial": "Praca komercyjna",
+    "evaluation": "Trenowanie i ewaluacja AI",
+    "research": "Projekt badawczy · zespołowy",
+    "personal": "Projekt własny",
+    "privateNote": "Opis funkcjonalny. Bez nazw wewnętrznych produktów i materiałów firmowych.",
+    "resultCount_one": "{{count}} wpis",
+    "resultCount_few": "{{count}} wpisy",
+    "resultCount_many": "{{count}} wpisów",
+    "resultCount_other": "{{count}} wpisu",
+    "retail": {
+      "title": "Złożone procesy. Czytelne aplikacje.",
+      "summary": "Aplikacje do obsługi danych, konfiguracji i operacji handlowych. Z oprogramowania, które współtworzymy w firmie, korzysta większość największych sieci handlowych w Polsce oraz wiele sieci w Europie.",
+      "context": "W firmowym zespole współtworzę oprogramowanie używane przez większość największych sieci handlowych w Polsce oraz wiele sieci w Europie. Aplikacje wspierają codzienną obsługę danych, konfigurację i procesy operacyjne. Jestem też lead developerem biblioteki komponentów i utili stanowiącej wspólny rdzeń naszych aplikacji oraz wtyczek płatności dla sklepów e-commerce klientów.",
+      "contribution": [
+        "Rozwój interfejsów webowych w React i TypeScript.",
+        "Praca z logiką aplikacji, usługami .NET i danymi SQL.",
+        "Rozwiązywanie problemów pojawiających się w używanych na co dzień aplikacjach."
+      ]
+    },
+    "tooling": {
+      "title": "Wspólny fundament aplikacji.",
+      "summary": "Jestem lead developerem biblioteki komponentów i utili, która stanowi wspólny fundament naszych aplikacji. Wspólny interfejs i narzędzia rozwijane z myślą o wielu produktach.",
+      "context": "Nasze aplikacje bazują na wspólnej bibliotece komponentów i utili. Jako jej lead developer odpowiadam za jej rozwój i utrzymanie. Ten obszar pracy obejmuje współdzielone UI i narzędzia, routing oraz internacjonalizację. Osobnym zadaniem jest generowanie dokumentów PDF z rozbudowanymi tabelami.",
+      "contribution": [
+        "Rozwój i utrzymanie biblioteki jako jej lead developer.",
+        "Tworzenie współdzielonych komponentów i utili stanowiących rdzeń aplikacji firmy.",
+        "Praca nad routingiem i internacjonalizacją.",
+        "Generowanie PDF, podział treści na strony i obsługa dużych tabel z przetwarzaniem w workerach."
+      ]
+    },
+    "payments": {
+      "title": "Płatności kartami podarunkowymi",
+      "summary": "Jako lead developer pracuję nad wtyczkami, które umożliwiają płatności kartami podarunkowymi obsługiwanymi przez naszą firmę w sklepach internetowych klientów.",
+      "context": "Projekt jest w trakcie realizacji. Obejmuje wtyczki dla różnych platform i technologii e-commerce używanych przez klientów, m.in. WordPressa. Wszystkie bazują na PHP.",
+      "contribution": [
+        "Tworzenie wtyczek dla WordPressa i innych platform e-commerce używanych przez klientów.",
+        "Implementacja integracji płatności w PHP, z dostosowaniem do różnych technologii, na których działają sklepy klientów."
+      ]
+    },
+    "rna": {
+      "title": "RNAQuANet: ML spotyka biologię.",
+      "summary": "Współtworzona aplikacja i pipeline uczenia maszynowego do szacowania jakości trójwymiarowych struktur RNA.",
+      "context": "Projekt bioinformatyczny łączący modele predykcyjne z aplikacją webową. Celem jest szacowanie jakości struktur RNA 3D.",
+      "contribution": [
+        "Współtworzenie aplikacji webowej i pipeline’u ML.",
+        "Praca nad modelami predykcyjnymi.",
+        "Parsowanie i przygotowanie danych opisujących struktury RNA."
+      ]
+    },
+    "travel": {
+      "title": "TravelTactician: podróż w jednej aplikacji.",
+      "summary": "Mobilny projekt do planowania podróży, zbudowany w React Native i Expo.",
+      "context": "Projekt eksplorujący planowanie podróży na urządzeniach mobilnych: organizację wyjazdu i praktyczne informacje w jednym miejscu.",
+      "contribution": [
+        "Tworzenie aplikacji mobilnej w React Native i Expo.",
+        "Przeniesienie doświadczenia z ekosystemu React na interfejs mobilny."
+      ]
+    },
+    "aiTasks": {
+      "title": "Przygotowanie zadań dla modeli",
+      "summary": "Projekty, prompty, cele i kontekst do sprawdzania konkretnych umiejętności modeli.",
+      "context": "Dobieram, przygotowuję lub generuję projekty programistyczne, na których można sprawdzić zachowanie modelu w konkretnym zagadnieniu.",
+      "contribution": [
+        "Przygotowanie projektu i materiałów potrzebnych do wykonania zadania.",
+        "Opracowanie promptu, celu, kontekstu i zasad oceny."
+      ]
+    },
+    "aiRubrics": {
+      "title": "Rubryki oceny",
+      "summary": "Zamieniam wymagania zadania w jasne, sprawdzalne kryteria oceny.",
+      "context": "Rozpisuję, po czym poznać poprawne rozwiązanie i jakie błędy mają znaczenie w danym zadaniu.",
+      "contribution": [
+        "Tworzenie konkretnych kryteriów i warunków ich spełnienia.",
+        "Doprecyzowanie niejasnych lub zbyt ogólnych wymagań."
+      ],
+      "example": {
+        "title": "Mały przykład rubryki",
+        "note": "",
+        "task": "Napraw wyniki wyszukiwania przy szybkim wpisywaniu i krótko wyjaśnij zmianę.",
+        "responses": {
+          "a": "Sprawdza ID zapytania, czyści listę przy pustym polu i wyjaśnia poprawkę.",
+          "b": "Dodaje tylko debounce; lista po wyczyszczeniu pola zostaje bez zmian. Krótko opisuje debounce."
+        },
+        "labels": {
+          "task": "Polecenie i skrót odpowiedzi A / B",
+          "objective": "Obiektywne",
+          "subjective": "Subiektywne",
+          "explicit": "Wprost z polecenia",
+          "implicit": "Wynikające z kontekstu",
+          "pass": "Spełnione",
+          "fail": "Niespełnione",
+          "preference": "Lepsza odpowiedź: {{response}}"
+        },
+        "criteria": {
+          "freshness": {
+            "text": "Starsza odpowiedź nie nadpisuje wyników nowszego zapytania.",
+            "reason": "Debounce w B ogranicza liczbę zapytań, ale nie gwarantuje kolejności ich odpowiedzi."
+          },
+          "empty": {
+            "text": "Wyczyszczenie pola opróżnia listę wyników.",
+            "reason": "A obsługuje pusty wpis; B pozostawia poprzednią listę."
+          },
+          "explanation": {
+            "text": "Wyjaśnienie jasno przedstawia, dlaczego poprawka zapobiega nieaktualnym wynikom.",
+            "reason": "A wyjaśnia kontrolę kolejności odpowiedzi; B opisuje jedynie debounce."
+          }
+        }
+      }
+    },
+    "aiEvaluation": {
+      "title": "Ewaluacja i porównania modeli",
+      "summary": "Oceniam kod, debugowanie, przebieg pracy i odpowiedzi według ustalonych kryteriów.",
+      "context": "Sprawdzam, jak model radzi sobie z zadaniem. W części projektów porównuję też odpowiedzi kilku modeli.",
+      "contribution": [
+        "Weryfikacja poprawności kodu, rozwiązywania błędów i końcowej odpowiedzi.",
+        "Ocena na podstawie kryteriów i konkretnych dowodów."
+      ]
+    },
+    "aiReports": {
+      "title": "Raporty z ewaluacji",
+      "summary": "Zbieram wyniki, uzasadnienia i wnioski w czytelny raport.",
+      "context": "Opisuję, co zadziałało, gdzie model popełnił błąd i na czym opiera się ocena.",
+      "contribution": [
+        "Podsumowanie wyników i zaobserwowanych problemów.",
+        "Uzasadnienie oceny i wskazanie rzeczy do dalszego sprawdzenia."
+      ]
+    },
+    "aiReview": {
+      "title": "Rate & review",
+      "summary": "Sprawdzam zadania, rubryki, oceny i raporty przygotowane przez inne osoby.",
+      "context": "Recenzuję pracę innych pod kątem zgodności z instrukcjami, spójności kryteriów i jakości uzasadnienia.",
+      "contribution": [
+        "Weryfikacja ocen i materiałów na podstawie dostępnych dowodów.",
+        "Konkretne uwagi i wskazanie potrzebnych poprawek."
+      ]
+    }
+  },
+  "about": {
+    "eyebrow": "O mnie",
+    "title": "Najpierw pytam:\na co, jeśli…?",
+    "description": "Lubię rozumieć, co dzieje się pod spodem. Raz jest to aplikacja i jej architektura. Innym razem proces trenowania AI, rubryka albo odpowiedź modelu, która wymaga drugiego spojrzenia.",
+    "note": "Zmiana perspektywy to część mojej pracy.",
+    "principles": [
+      {
+        "title": "Najpierw zrozumieć",
+        "description": "Jaki problem rozwiązujemy i czego rzeczywiście potrzebuje użytkownik?"
+      },
+      {
+        "title": "Potem zbudować",
+        "description": "Dobrać narzędzia i zamienić pomysł w rozwiązanie, z którego można skorzystać."
+      },
+      {
+        "title": "Na końcu sprawdzić",
+        "description": "Zweryfikować założenia, kod i wynik. Szczególnie, gdy autorem odpowiedzi jest AI."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Masz coś\nna myśli?",
+    "description": "Oprogramowanie, trenowanie AI, ewaluacja modeli albo pomysł, który jeszcze nie mieści się w żadnej szufladce. Porozmawiajmy.",
+    "linkedin": "Napisz na LinkedIn",
+    "email": "Napisz e-mail",
+    "github": "Zajrzyj do kodu",
+    "back": "Do góry",
+    "footer": ""
+  },
+  "lab": {
+    "eyebrow": "Przestrzeń na eksperymenty",
+    "title": "Warsztat jest otwarty.",
+    "description": "Tutaj pojawią się małe narzędzia i eksperymenty związane z programowaniem, danymi i AI.",
+    "status": "Pierwsze narzędzia w przygotowaniu",
+    "back": "Wróć do portfolio"
+  },
+  "missing": {
+    "title": "Tutaj jeszcze nic nie ma.",
+    "description": "Ten adres nie prowadzi do istniejącej strony.",
+    "back": "Wróć do portfolio"
+  },
+  "tags": {
+    "evaluation": "Ocena LLM",
+    "review": "Przegląd kodu",
+    "rubrics": "Rubryki oceny",
+    "ml": "Uczenie maszynowe",
+    "workers": "Web Workers",
+    "training": "Trenowanie AI",
+    "rateReview": "Rate & review",
+    "paymentPlugins": "Wtyczki płatności",
+    "promptDesign": "Projektowanie promptów",
+    "evaluationReports": "Raporty z ewaluacji"
+  },
+  "projects": {
+    "eyebrow": "Projekty",
+    "title": "Czasem skręcam\nw ciekawą stronę.",
+    "description": "Badania, projekty zespołowe i własne pomysły. Ważne doświadczenia, które dopełniają codzienną pracę.",
+    "rnaNote": "ML × bioinformatyka",
+    "awardTitle": "Nagroda główna PTBI · 2024",
+    "awardDescription": "Jedna z dwóch równorzędnych nagród w konkursie na najlepszą pracę licencjacką lub inżynierską z bioinformatyki.",
+    "awardLink": "Potwierdzenie nagrody"
+  },
+  "editor": {
+    "label": "Przeglądaj doświadczenie",
+    "explorer": "Pliki",
+    "toggleExplorer": "Pokaż lub ukryj pliki",
+    "workspace": "szymon-stanislawski",
+    "openFiles": "Otwarte pliki",
+    "closeFile": "Zamknij {{file}}",
+    "breadcrumb": "Ścieżka pliku",
+    "showExample": "Zobacz mały przykład rubryki",
+    "readme": {
+      "title": "Szymon Stanisławski",
+      "subtitle": "Programowanie + trenowanie AI",
+      "intro": "Tu możesz zajrzeć do poszczególnych obszarów mojej pracy.",
+      "software": "Aplikacje sieci handlowych, wspólna biblioteka komponentów i wtyczki do płatności kartami podarunkowymi. W dwóch ostatnich obszarach jestem lead developerem.",
+      "ai": "Przygotowanie zadań i promptów, rubryki, ewaluacja modeli, raporty oraz rate & review pracy innych osób.",
+      "open": "Otwórz",
+      "openSoftware": "Otwórz programowanie",
+      "openAi": "Otwórz AI training"
+    },
+    "footerLeft": "",
+    "footerCenter": ""
+  }
+}

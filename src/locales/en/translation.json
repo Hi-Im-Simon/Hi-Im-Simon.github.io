@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "Szymon Stanisławski Software & AI",
+    "description": "Szymon Stanisławski’s portfolio. Two equally important fields: software engineering and AI training, rate & review, rubrics and model evaluation."
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Homepage",
+    "skills": "Skills",
+    "work": "Experience",
+    "about": "About me",
+    "contact": "Let’s talk",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "language": "Choose language",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Szymon Stanisławski / Poznań, Poland",
+    "line1": "I write code.",
+    "line2": "I train AI.",
+    "description": "Every day, I work on both sides: building software and contributing to AI training. Applications, rate & review, rubrics, model evaluation. Two disciplines that increasingly intersect.",
+    "cta": "Explore my skills",
+    "github": "Explore GitHub",
+    "evidence": "See it in practice",
+    "intersection": "",
+    "software": {
+      "label": "Software engineering",
+      "title": "Software engineering",
+      "boardLine": "APPLICATIONS / INTERFACES / SYSTEMS"
+    },
+    "ai": {
+      "label": "AI training & evaluation",
+      "title": "AI training & evaluation",
+      "boardLine": "TRAINING / RATE & REVIEW / EVALS",
+      "boardTitle": "human → AI"
+    },
+    "boardNote": "...and connecting the two",
+    "shuffle": "Shuffle things a little"
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Software and AI.\nI connect the two.",
+    "description": "I build applications and work on model training. I bring these skills together by designing coding tasks for AI and evaluating how models handle code.",
+    "software": {
+      "title": "Software engineering",
+      "description": "I help build applications used by most of Poland’s largest retail chains and many retail chains across Europe.",
+      "items": [
+        "Lead developer of the component and utility library at the core of our applications",
+        "Lead developer of gift card payment plugins for clients’ e-commerce stores",
+        "React, TypeScript, .NET, SQL & Python: from interfaces to logic and data"
+      ],
+      "evidence": "Explore my software work"
+    },
+    "ai": {
+      "title": "AI training & evaluation",
+      "description": "I work on AI training and review the quality of projects, data and responses that support the process.",
+      "items": [
+        "Coding projects, prompts, goals and task context",
+        "Writing rubrics, evaluating code and comparing models",
+        "Reports and rate & review of other people’s work"
+      ],
+      "evidence": "Explore my work with AI"
+    }
+  },
+  "work": {
+    "eyebrow": "Experience",
+    "title": "What I work on",
+    "description": "I develop applications for retail chains, a component library and payment plugins. Alongside that, I work on AI training and model evaluation.",
+    "filtersLabel": "Filter experience",
+    "all": "Everything",
+    "software": "Software",
+    "ai": "AI",
+    "details": "My contribution",
+    "close": "Close details",
+    "context": "Context",
+    "contribution": "My contribution",
+    "stack": "Technologies & methods",
+    "source": "Source code",
+    "demo": "Project website",
+    "commercial": "Commercial work",
+    "evaluation": "AI training & evaluation",
+    "research": "Research · team project",
+    "personal": "Personal project",
+    "privateNote": "Functional overview. No internal product names or company materials.",
+    "resultCount_one": "{{count}} entry",
+    "resultCount_other": "{{count}} entries",
+    "retail": {
+      "title": "Complex workflows. Clear interfaces.",
+      "summary": "Applications for data management, configuration and retail operations. The software we build as a company is used by most of Poland’s largest retail chains and many retail chains across Europe.",
+      "context": "As part of the company’s team, I help develop software used by most of Poland’s largest retail chains and many retail chains across Europe. The applications support everyday data management, configuration and operational workflows. I’m also the lead developer of the component and utility library at the core of our applications, as well as payment plugins for clients’ e-commerce stores.",
+      "contribution": [
+        "Developing web interfaces with React and TypeScript.",
+        "Working with application logic, .NET services and SQL data.",
+        "Solving problems in applications used in everyday operations."
+      ]
+    },
+    "tooling": {
+      "title": "A shared foundation for our applications.",
+      "summary": "I’m the lead developer of the component and utility library that forms a shared foundation for our applications. Shared interfaces and tools developed for multiple products.",
+      "context": "Our applications build on a shared component and utility library. As its lead developer, I’m responsible for its development and maintenance. This work covers shared UI and utilities, routing and internationalization. A separate task is generating PDF documents with large tables.",
+      "contribution": [
+        "Developing and maintaining the library as its lead developer.",
+        "Building shared components and utilities that form the core of the company’s applications.",
+        "Working on routing and internationalization.",
+        "PDF generation, pagination and large tables, with worker-based processing."
+      ]
+    },
+    "payments": {
+      "title": "Gift card payments",
+      "summary": "I’m the lead developer of an ongoing project building plugins that let customers pay in our clients’ online stores using gift cards supported by our company.",
+      "context": "The project is currently in development. It covers plugins for various e-commerce platforms and technologies used by our clients, including WordPress. All are based on PHP.",
+      "contribution": [
+        "Building plugins for WordPress and other e-commerce platforms used by our clients.",
+        "Implementing payment integrations in PHP, adapting them to the different technologies behind our clients’ stores."
+      ]
+    },
+    "rna": {
+      "title": "RNAQuANet: ML meets biology.",
+      "summary": "A co-developed application and machine learning pipeline for estimating the quality of three-dimensional RNA structures.",
+      "context": "A bioinformatics project connecting predictive models with a web application to estimate the quality of 3D RNA structures.",
+      "contribution": [
+        "Co-developing the web application and ML pipeline.",
+        "Working on predictive models.",
+        "Parsing and preparing RNA structural data."
+      ]
+    },
+    "travel": {
+      "title": "TravelTactician: a trip in one app.",
+      "summary": "A mobile travel-planning project built with React Native and Expo.",
+      "context": "A project exploring travel planning on mobile devices, bringing trip organization and practical information into one place.",
+      "contribution": [
+        "Building a mobile application with React Native and Expo.",
+        "Applying experience from the React ecosystem to a mobile interface."
+      ]
+    },
+    "aiTasks": {
+      "title": "Preparing tasks for models",
+      "summary": "Projects, prompts, goals and context for testing specific model capabilities.",
+      "context": "I find, prepare or generate coding projects to assess how a model handles a specific problem.",
+      "contribution": [
+        "Preparing the project and materials needed for the task.",
+        "Writing the prompt, goal, context and evaluation guidelines."
+      ]
+    },
+    "aiRubrics": {
+      "title": "Evaluation rubrics",
+      "summary": "I turn task requirements into clear, verifiable evaluation criteria.",
+      "context": "I define what a correct solution should do and which errors matter for the task.",
+      "contribution": [
+        "Writing specific criteria and the conditions for meeting them.",
+        "Clarifying vague or overly broad requirements."
+      ],
+      "example": {
+        "title": "A small rubric example",
+        "note": "",
+        "task": "Fix search results when the user types quickly and briefly explain the change.",
+        "responses": {
+          "a": "Checks the request ID, clears the list for an empty query and explains the fix.",
+          "b": "Only adds debounce; clearing the field leaves the previous list. Briefly describes debounce."
+        },
+        "labels": {
+          "task": "Prompt and response A / B summaries",
+          "objective": "Objective",
+          "subjective": "Subjective",
+          "explicit": "Explicit in the prompt",
+          "implicit": "Implicit in the context",
+          "pass": "Pass",
+          "fail": "Fail",
+          "preference": "Better response: {{response}}"
+        },
+        "criteria": {
+          "freshness": {
+            "text": "An older response cannot overwrite the results of a newer query.",
+            "reason": "Debounce in B limits requests but does not guarantee the order of their responses."
+          },
+          "empty": {
+            "text": "Clearing the field empties the result list.",
+            "reason": "A handles an empty query; B leaves the previous list."
+          },
+          "explanation": {
+            "text": "The explanation clearly describes why the fix prevents stale results.",
+            "reason": "A explains how response ordering is handled; B only describes debounce."
+          }
+        }
+      }
+    },
+    "aiEvaluation": {
+      "title": "Model evaluation & comparison",
+      "summary": "I assess code, debugging, the work process and responses against defined criteria.",
+      "context": "I check how a model handles a task. In some projects, I also compare responses from several models.",
+      "contribution": [
+        "Checking code correctness, debugging and the final response.",
+        "Evaluating against criteria and concrete evidence."
+      ]
+    },
+    "aiReports": {
+      "title": "Evaluation reports",
+      "summary": "I bring results, justifications and conclusions together in a clear report.",
+      "context": "I describe what worked, where the model went wrong and what supports the assessment.",
+      "contribution": [
+        "Summarizing results and observed issues.",
+        "Justifying the evaluation and identifying what to check next."
+      ]
+    },
+    "aiReview": {
+      "title": "Rate & review",
+      "summary": "I review tasks, rubrics, evaluations and reports prepared by other people.",
+      "context": "I review others’ work for consistency with instructions, clear criteria and well-supported conclusions.",
+      "contribution": [
+        "Checking evaluations and materials against the available evidence.",
+        "Giving specific feedback and identifying necessary changes."
+      ]
+    }
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "First, I ask:\nwhat if…?",
+    "description": "I like understanding what is happening underneath. Sometimes it is an application and its architecture. Other times, an AI training process, a rubric or a model response that deserves a second look.",
+    "note": "Changing perspective is part of the work.",
+    "principles": [
+      {
+        "title": "Understand first",
+        "description": "What problem are we solving, and what does the user actually need?"
+      },
+      {
+        "title": "Then build",
+        "description": "Choose the tools and turn an idea into something people can use."
+      },
+      {
+        "title": "Finally, verify",
+        "description": "Check the assumptions, the code and the outcome. Especially when the answer comes from AI."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Something\non your mind?",
+    "description": "Software, AI training, model evaluation or an idea that does not fit a category yet. Let’s talk.",
+    "linkedin": "Message me on LinkedIn",
+    "email": "Send me an email",
+    "github": "Explore the code",
+    "back": "Back to top",
+    "footer": ""
+  },
+  "lab": {
+    "eyebrow": "Room for experiments",
+    "title": "The workshop is open.",
+    "description": "Small tools and experiments in software, data and AI will live here.",
+    "status": "First tools in preparation",
+    "back": "Back to portfolio"
+  },
+  "missing": {
+    "title": "Nothing here just yet.",
+    "description": "This address doesn’t lead to an existing page.",
+    "back": "Back to portfolio"
+  },
+  "tags": {
+    "evaluation": "LLM evaluation",
+    "review": "Code review",
+    "rubrics": "Evaluation rubrics",
+    "ml": "Machine learning",
+    "workers": "Web Workers",
+    "training": "AI training",
+    "rateReview": "Rate & review",
+    "paymentPlugins": "Payment plugins",
+    "promptDesign": "Prompt design",
+    "evaluationReports": "Evaluation reports"
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Sometimes curiosity\ntakes a side road.",
+    "description": "Research, team projects and personal ideas. Experiences that add another perspective to my everyday work.",
+    "rnaNote": "ML × bioinformatics",
+    "awardTitle": "PTBI main prize · 2024",
+    "awardDescription": "One of two equal main prizes for the best bachelor’s or engineering thesis in bioinformatics.",
+    "awardLink": "Award confirmation"
+  },
+  "editor": {
+    "label": "Explore my experience",
+    "explorer": "Explorer",
+    "toggleExplorer": "Show or hide files",
+    "workspace": "szymon-stanislawski",
+    "openFiles": "Open files",
+    "closeFile": "Close {{file}}",
+    "breadcrumb": "File path",
+    "showExample": "See a small rubric example",
+    "readme": {
+      "title": "Szymon Stanisławski",
+      "subtitle": "Software engineering + AI training",
+      "intro": "Browse the files here to explore the different parts of my work.",
+      "software": "Applications for retail chains, a shared component library and gift card payment plugins. I’m the lead developer of the latter two.",
+      "ai": "Task and prompt design, rubrics, model evaluation, reports, and rate & review of other people’s work.",
+      "open": "Open",
+      "openSoftware": "Open software",
+      "openAi": "Open AI training"
+    },
+    "footerLeft": "",
+    "footerCenter": ""
+  }
+}
